@@ -48,7 +48,6 @@ func _ready():
 	Console.print_line(OS.get_data_dir())
 	print(OS.get_data_dir())
 	Console.print_line(OS.get_executable_path())
-	print(OS.get_executable_path())
 	var my_data = load_txt_file("user://logs/godot.log")
 	Console.print_line(my_data)
 	print(my_data)

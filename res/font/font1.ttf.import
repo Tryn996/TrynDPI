@@ -1,0 +1,15 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bsev51k2h27qx"
+path="res://.godot/imported/font1.ttf-3b80d5bacb4c8105b57f11c1dced8132.fontdata"
+
+[deps]
+
+source_file="res://res/font/font1.ttf"
+dest_files=["res://.godot/imported/font1.ttf-3b80d5bacb4c8105b57f11c1dced8132.fontdata"]
+
+[params]
+
+dummy_value_ignore_me=0

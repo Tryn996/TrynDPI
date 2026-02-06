@@ -1,0 +1,383 @@
+[gd_scene format=3 uid="uid://dnxd7nhjj8lte"]
+
+[ext_resource type="Script" uid="uid://cp0fxtf7la6b" path="res://script/scens/main.gd" id="1_x33ci"]
+[ext_resource type="FontFile" uid="uid://d4df0j0pjrrp8" path="res://res/font/font2.ttf" id="2_sff63"]
+[ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3_3unu0"]
+[ext_resource type="Texture2D" uid="uid://b0eilnoim1p41" path="res://res/icons/ext256.png" id="4_gbpyo"]
+[ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5_uid4v"]
+[ext_resource type="Script" uid="uid://bq2eve14q2yry" path="res://script/scens/scen_3.gd" id="6_g45gn"]
+[ext_resource type="Script" uid="uid://rc6xujlpkqqw" path="res://script/scens/del.gd" id="7_6nny7"]
+[ext_resource type="Script" uid="uid://btbxrevmxbdmq" path="res://script/load/load.gd" id="8_q1hc7"]
+
+[node name="Main" type="Control" unique_id=168410594]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x33ci")
+
+[node name="Scen1" type="Control" parent="." unique_id=1127836550]
+visible = false
+anchors_preset = 0
+offset_left = -9.135
+offset_top = 31.765
+offset_right = 30.865
+offset_bottom = 71.76497
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scen1" unique_id=1008072061]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 98.785
+offset_top = 225.64
+offset_right = 364.7587
+offset_bottom = 323.64032
+grow_horizontal = 2
+scale = Vector2(1.9, 1.9)
+
+[node name="Start" type="Button" parent="Scen1/VBoxContainer" unique_id=1439354986]
+layout_mode = 2
+text = "Старт"
+
+[node name="Quit" type="Button" parent="Scen1/VBoxContainer" unique_id=1538509142]
+visible = false
+layout_mode = 2
+text = "Выключить"
+
+[node name="Restart" type="Button" parent="Scen1/VBoxContainer" unique_id=982739160]
+layout_mode = 2
+text = "Перезапуск"
+
+[node name="QuitAll" type="Button" parent="Scen1/VBoxContainer" unique_id=440146134]
+layout_mode = 2
+text = "Выход"
+
+[node name="Status" type="VBoxContainer" parent="Scen1" unique_id=507404231]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 288.835
+offset_top = 151.83
+offset_right = 336.835
+offset_bottom = 173.83
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+
+[node name="Off" type="Label" parent="Scen1/Status" unique_id=1987841814]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Выкл"
+
+[node name="On" type="Label" parent="Scen1/Status" unique_id=874083217]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Вкл"
+
+[node name="Check" type="VBoxContainer" parent="Scen1" unique_id=1935859527]
+layout_mode = 0
+offset_left = 119.135
+offset_top = 469.23502
+offset_right = 624.13495
+offset_bottom = 564.2339
+
+[node name="Discord" type="Button" parent="Scen1/Check" unique_id=1199919125]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="YouTube" type="Button" parent="Scen1/Check" unique_id=1168933549]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
+[node name="Updeate" type="Button" parent="Scen1/Check" unique_id=1759128197]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Обновить"
+
+[node name="Logo" type="Label" parent="Scen1" unique_id=1190206879]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 148.135
+offset_top = 28.235
+offset_right = 640.135
+offset_bottom = 165.235
+grow_horizontal = 2
+scale = Vector2(0.82, 0.82)
+theme_override_fonts/font = ExtResource("3_3unu0")
+theme_override_font_sizes/font_size = 136
+text = "Tr   yn Dpi"
+
+[node name="Label" type="Label" parent="Scen1" unique_id=2005402600]
+layout_mode = 0
+offset_left = 119.135
+offset_top = 423.235
+offset_right = 621.1349
+offset_bottom = 466.235
+theme_override_font_sizes/font_size = 22
+text = "Статус приложений"
+horizontal_alignment = 1
+
+[node name="LogoImg" type="TextureButton" parent="Scen1" unique_id=2007115492]
+layout_mode = 0
+offset_left = 236.13498
+offset_top = 27.235
+offset_right = 492.13498
+offset_bottom = 283.235
+scale = Vector2(0.485, 0.485)
+texture_normal = ExtResource("4_gbpyo")
+
+[node name="Scen2" type="Control" parent="." unique_id=1236932625]
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 36.63
+offset_right = -15.0
+offset_bottom = 833.63
+script = ExtResource("5_uid4v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scen2" unique_id=380789474]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 23.0
+offset_right = 727.4737
+offset_bottom = 658.0
+scale = Vector2(0.95, 0.95)
+
+[node name="Text1" type="Label" parent="Scen2/VBoxContainer" unique_id=1614146939]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Автоматически запускать обход при в ходе в приложение"
+
+[node name="Auto_on" type="Button" parent="Scen2/VBoxContainer" unique_id=1144969747]
+layout_mode = 2
+tooltip_text = "Когда запускается программа 
+сразу же запускается обход"
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Выкл"
+
+[node name="Auto_off" type="Button" parent="Scen2/VBoxContainer" unique_id=654228993]
+visible = false
+layout_mode = 2
+tooltip_text = "Когда запускается программа 
+сразу же запускается обход"
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Вкл"
+
+[node name="Text2" type="Label" parent="Scen2/VBoxContainer" unique_id=1407130074]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "При запуске сворачивать программу в трей"
+
+[node name="Windows_on" type="Button" parent="Scen2/VBoxContainer" unique_id=298652719]
+layout_mode = 2
+tooltip_text = "Когда запускается программа она сворачивается в 
+третьей откуда вы можете ей управлять ей"
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Выкл"
+
+[node name="Windows_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1339292895]
+visible = false
+layout_mode = 2
+tooltip_text = "Когда запускается программа она сворачивается в 
+третьей откуда вы можете ей управлять ей"
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "Вкл"
+
+[node name="Text3" type="Label" parent="Scen2/VBoxContainer" unique_id=1886761709]
+layout_mode = 2
+text = "Открывать TrynDPI при запуске системы"
+
+[node name="Auto_open_on" type="Button" parent="Scen2/VBoxContainer" unique_id=992830183]
+layout_mode = 2
+tooltip_text = "Когда запускается Windows сразу же 
+запускается обход"
+text = "Выкл"
+
+[node name="Auto_open_off" type="Button" parent="Scen2/VBoxContainer" unique_id=804912217]
+visible = false
+layout_mode = 2
+tooltip_text = "Когда запускается Windows сразу же 
+запускается обход"
+text = "Вкл"
+
+[node name="Text4" type="Label" parent="Scen2/VBoxContainer" unique_id=913715156]
+layout_mode = 2
+text = "Сворачивать приложение в треей при нажатии на крестик"
+
+[node name="Trey_on" type="Button" parent="Scen2/VBoxContainer" unique_id=1677824056]
+layout_mode = 2
+tooltip_text = "Вкл/Выкл сворачивание в треей при нажатии на крестик"
+text = "Вкл"
+
+[node name="Trey_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1295692984]
+visible = false
+layout_mode = 2
+tooltip_text = "Вкл/Выкл сворачивание в треей при нажатии на крестик"
+text = "Выкл"
+
+[node name="Func" type="Label" parent="Scen2/VBoxContainer" unique_id=2065799611]
+layout_mode = 2
+text = "Функции"
+
+[node name="del" type="Button" parent="Scen2/VBoxContainer" unique_id=1299094512]
+layout_mode = 2
+tooltip_text = "Удаляет TrynDPI с выбранным способом удалением"
+text = "Удалить TrynDPI"
+
+[node name="Full_settings" type="Button" parent="Scen2/VBoxContainer" unique_id=1412051680]
+layout_mode = 2
+tooltip_text = "Открывает bat файл с которого можно более лучше настроить TrynDPi"
+text = "Более детальные настройки"
+
+[node name="Lists" type="Button" parent="Scen2/VBoxContainer" unique_id=64470882]
+layout_mode = 2
+tooltip_text = "Открывает txt файл со всеми сайтами которыми будет обходить TrynDPI"
+text = "Открыть листы"
+
+[node name="Corn" type="Button" parent="Scen2/VBoxContainer" unique_id=1905771019]
+layout_mode = 2
+text = "Открыть корневую папку"
+
+[node name="Scen3" type="Control" parent="." unique_id=490869190]
+visible = false
+anchors_preset = 0
+offset_left = -52.745
+offset_right = -12.745
+offset_bottom = 40.0
+scale = Vector2(1.185, 1.185)
+script = ExtResource("6_g45gn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scen3" unique_id=775863570]
+layout_mode = 0
+offset_left = 236.07175
+offset_top = 271.72995
+offset_right = 422.07172
+offset_bottom = 369.72995
+scale = Vector2(1.28, 1.28)
+
+[node name="Button" type="Button" parent="Scen3/VBoxContainer" unique_id=1363571145]
+layout_mode = 2
+text = "Тест на 10mb"
+
+[node name="Button2" type="Button" parent="Scen3/VBoxContainer" unique_id=1837827484]
+layout_mode = 2
+text = "Тест на 100mb"
+
+[node name="Button3" type="Button" parent="Scen3/VBoxContainer" unique_id=483340426]
+layout_mode = 2
+text = "Тест на 1GB"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Scen3" unique_id=1531916898]
+layout_mode = 0
+offset_left = 109.489456
+offset_top = 192.40508
+offset_right = 590.50214
+offset_bottom = 270.4051
+
+[node name="Label" type="Label" parent="Scen3/VBoxContainer2" unique_id=75007413]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Нажмите на кнопку для проверки"
+
+[node name="ProgressBar" type="ProgressBar" parent="Scen3/VBoxContainer2" unique_id=366421154]
+layout_mode = 2
+
+[node name="Del" type="Control" parent="." unique_id=957166744]
+visible = false
+anchors_preset = 0
+offset_left = 118.92
+offset_top = 41.465
+offset_right = 158.91992
+offset_bottom = 81.465
+script = ExtResource("7_6nny7")
+
+[node name="OptionButton" type="OptionButton" parent="Del" unique_id=20335033]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 232.0
+offset_right = 437.0
+offset_bottom = 262.0
+item_count = 2
+popup/item_0/text = "Обычное"
+popup/item_0/id = 0
+popup/item_1/text = "Полное (удаление всех настроек)"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Del" unique_id=1272279572]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 206.0
+offset_right = 338.0
+offset_bottom = 228.0
+text = "Способ удаления"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Del" unique_id=1925536358]
+title = "Подтверждение"
+ok_button_text = "Да"
+dialog_text = "Вы уверены?"
+cancel_button_text = "Назад"
+
+[node name="Load" type="Node" parent="." unique_id=78051219]
+script = ExtResource("8_q1hc7")
+
+[node name="L" type="ColorRect" parent="." unique_id=1490804548]
+layout_mode = 0
+offset_left = -4.0
+offset_right = 722.0
+offset_bottom = 33.0
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="Settings" type="Button" parent="." unique_id=1838244123]
+layout_mode = 0
+offset_left = 232.0
+offset_right = 484.0
+offset_bottom = 33.0
+theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+text = "Настройки"
+flat = true
+
+[node name="Status" type="Button" parent="." unique_id=146166685]
+layout_mode = 0
+offset_left = 0.088858485
+offset_right = 231.597
+offset_bottom = 32.999996
+rotation = -6.28319
+theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+text = "Статус"
+flat = true
+
+[node name="SpeedTest" type="Button" parent="." unique_id=430777024]
+layout_mode = 0
+offset_left = 484.0
+offset_right = 720.0
+offset_bottom = 33.0
+theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+text = "Сеть"
+flat = true
+
+[node name="Vers" type="Label" parent="." unique_id=598384679]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 653.0
+offset_right = 85613.0
+offset_bottom = 687.0
+theme_override_fonts/font = ExtResource("2_sff63")
+text = "ТУТ ТИПО СМЕХУЕЧКИ"
+
+[connection signal="pressed" from="Scen3/VBoxContainer/Button" to="Scen3" method="_on_button_pressed"]
+[connection signal="pressed" from="Scen3/VBoxContainer/Button2" to="Scen3" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Scen3/VBoxContainer/Button3" to="Scen3" method="_on_button_3_pressed"]
+[connection signal="item_selected" from="Del/OptionButton" to="Del" method="_on_option_button_item_selected"]
+[connection signal="canceled" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_confirmed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Status" to="." method="_on_status_pressed"]
+[connection signal="pressed" from="SpeedTest" to="." method="_on_speed_test_pressed"]

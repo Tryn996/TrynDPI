@@ -22,7 +22,7 @@ config/custom_user_dir_name="TrynDPI"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/show_image=false
 config/icon="uid://bphe0xixmxebf"
-config/windows_native_icon="res://res/icons/ext512.ico"
+config/windows_native_icon="res://res/icons/ext.ico"
 
 [autoload]
 
@@ -30,6 +30,7 @@ YouTube="*res://script/check/yotube.gd"
 Discord="*res://script/check/discord.gd"
 Console="*uid://b6o507xrgbte3"
 Global="*uid://cnjspe151cw17"
+SteamTest="*uid://8m8ry6do27ou"
 
 [console]
 
@@ -76,3 +77,10 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.158472, 0.158472, 0.158472, 1)
+
+[steam]
+
+initialization/app_id=0
+initialization/initialize_on_startup=false
+initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

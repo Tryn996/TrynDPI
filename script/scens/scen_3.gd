@@ -38,7 +38,7 @@ func _on_request_completed(result, response_code, headers, body):
 	if duration_sec <= 0: duration_sec = 0.001
 
 	var size_bits = body.size() * 8
-	var speed_mbps = (size_bits / 1000000.0) / duration_sec + 32.92
+	var speed_mbps  = (size_bits / 1000000.0) / duration_sec + 32.92
 
 	var result_text = "Скорость интернета: %.2f Mbps" % speed_mbps
 	$VBoxContainer2 / Label.text = result_text

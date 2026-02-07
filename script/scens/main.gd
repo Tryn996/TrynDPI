@@ -1,168 +1,90 @@
 extends Control
+@onready var scenes = {"main": $Scen1, "settings": $Scen2, "speed": $Scen3, "del": $Del}
+@onready var status_labels = {"on": $Scen1/Status/On, "off": $Scen1/Status/Off}
+@onready var main_buttons = {"start": $Scen1/VBoxContainer/Start, "off": $Scen1/VBoxContainer/Quit}
 
+var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
+var start_state = 0
 
-@onready var Scen1 = $Scen1
-@onready var Scen2 = $Scen2
-@onready var Scen3 = $Scen3
-@onready var Scen4 = $Del
+func _ready():
+	switch_scene("main")
+	OS.low_processor_usage_mode = true
+	$Vers.text = Global.vers
+	
+	if "--bat" in OS.get_cmdline_args():
+		run_dpi()
+		get_tree().quit()
+	task_bar()
+	main_buttons.start.pressed.connect(run_dpi)
+	main_buttons.off.pressed.connect(stop_dpi)
+	$Scen1/VBoxContainer/Restart.pressed.connect(restart_dpi)
+	$Scen1/VBoxContainer/QuitAll.pressed.connect(func(): stop_dpi(); await get_tree().create_timer(0.5).timeout; get_tree().quit())
+	$Settings.pressed.connect(switch_scene.bind("settings"))
+	$Status.pressed.connect(switch_scene.bind("main"))
+	$SpeedTest.pressed.connect(switch_scene.bind("speed"))
+	$Scen1/Check/Updeate.pressed.connect(check_web)
 
-@onready var BStart = $Scen1 / VBoxContainer / Start
-@onready var BOff = $Scen1 / VBoxContainer / Quit
-@onready var BRestart = $Scen1 / VBoxContainer / Restart
-@onready var BQuit = $Scen1 / VBoxContainer / QuitAll
-@onready var SBOn1 = $Scen2 / VBoxContainer / Auto_on
-@onready var SBOff1 = $Scen2 / VBoxContainer / Auto_off
-@onready var SBOn3 = $Scen2 / VBoxContainer / Auto_open_on
-@onready var SBOff3 = $Scen2 / VBoxContainer / Auto_open_off
-@onready var BDel = $Scen2 / VBoxContainer / del
-@onready var BSettings = $Settings
-@onready var BSatus = $Status
-@onready var BDiscord = $Scen1 / Check / Discord
-@onready var BYouTube = $Scen1 / Check / YouTube
-@onready var BSpeedTest = $SpeedTest
-@onready var BTreyon4 = $Scen2 / VBoxContainer / Trey_on
-@onready var BTreyoff4 = $Scen2 / VBoxContainer / Trey_off
-@onready var Update = $Scen1 / Check / Updeate
+func switch_scene(key):
+	for s in scenes.values(): s.hide()
+	scenes[key].show()
 
-@onready var Vers = $Vers
-@onready var LOn = $Scen1 / Status / On
-@onready var LOff = $Scen1 / Status / Off
+func update_ui(is_running: bool):
+	status_labels.on.visible = is_running
+	status_labels.off.visible = !is_running
+	main_buttons.off.visible = is_running
+	main_buttons.start.visible = !is_running
 
-var path_kill = (OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat")
-var save_path = "user://save.save"
-var start = 0
-var path = Global.path
-var time = Time.get_date_dict_from_system()
-var pathOs = OS.get_executable_path()
-var language = OS.get_locale_language()
+func run_dpi():
+	OS.shell_open(Global.path)
+	update_ui(true)
+	start_state = 1
+	check_web()
+
+func stop_dpi():
+	OS.shell_open(path_kill)
+	update_ui(false)
+	start_state = 0
+
+func restart_dpi():
+	stop_dpi()
+	await get_tree().create_timer(0.5).timeout
+	run_dpi()
+
+func check_web():
+	YouTube.check_website_status("https://www.youtube.com/")
+	Discord.check_website_status("https://discord.com/")
+
 func task_bar():
-	var si: StatusIndicator = StatusIndicator.new()
+	var si = StatusIndicator.new()
 	si.icon = load("res://res/icons/ext512.png")
-	si.tooltip = "TrynDPI"
 	add_child(si)
-	var menu: PopupMenu = PopupMenu.new()
+	var menu = PopupMenu.new()
 	add_child(menu)
-	menu.add_item("Показать окно", 3)
-	menu.add_separator()
-	menu.add_item("Включить", 1)
-	menu.add_item("Выключить", 2)
-	menu.add_item("Перезапустить", 5)
-	menu.add_separator()
-	menu.add_item("Выход", 4)
+	for item in [["Включить", 1], ["Выключить", 2], ["Перезапустить", 5], ["Показать", 3], ["Выход", 4]]:
+		menu.add_item(item[0], item[1])
 	si.menu = menu.get_path()
 	menu.id_pressed.connect(menu_item_pressed)
+
 func menu_item_pressed(id):
 	match id:
-		1:
-			Global.start = 1
-		2:
-			OS.shell_open(path_kill)
-			LOn.hide()
-			LOff.show()
-			BOff.hide()
-			BStart.show()
-			start = 0
-		4:
-			if start == 1 or 2:
-				OS.shell_open(path_kill)
-			LOn.hide()
-			LOff.show()
-			BOff.hide()
-			BStart.show()
-			await get_tree().create_timer(0.5).timeout
-			get_tree().quit()
-		3:
+		1: run_dpi()
+		2: stop_dpi()
+		5: restart_dpi()
+		3: 
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, false)
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		5:
-			OS.shell_open(path_kill)
-			LOn.hide()
-			LOff.show()
-			await get_tree().create_timer(0.5).timeout
-			LOff.hide()
-			LOn.show()
-			OS.shell_open(path)
-func _ready():
-	print(Global.path)
-	print(language)
-	print(path_kill)
-	print(time)
-	print(pathOs)
-	Scen1.show()
-	Scen2.hide()
-	Scen3.hide()
-	Scen4.hide()
-	if "--bat" in OS.get_cmdline_args():
-		OS.shell_open(path)
-		await get_tree().create_timer(0.1).timeout
-		get_tree().quit()
-	else:
-		pass
-	task_bar()
-	OS.low_processor_usage_mode = true
-	Vers.text = Global.vers
-	BStart.pressed.connect( func():
-		Global.start = 1
-		start = 1)
-	BRestart.pressed.connect( func():
-		OS.shell_open(path_kill)
-		LOn.hide()
-		LOff.show()
-		await get_tree().create_timer(0.5).timeout
-		LOff.hide()
-		LOn.show()
-		OS.shell_open(path)
-		BStart.hide()
-		BOff.show())
-	BQuit.pressed.connect( func():
-		LOn.hide()
-		LOff.show()
-		OS.shell_open(path_kill)
-		await get_tree().create_timer(0.5).timeout
-		get_tree().quit())
-	BOff.pressed.connect( func():
-		OS.shell_open(path_kill)
-		LOn.hide()
-		LOff.show()
-		BOff.hide()
-		BStart.show()
-		start = 0)
-	BSettings.pressed.connect( func():
-		Scen1.hide()
-		Scen2.show()
-		Scen4.hide()
-		Scen3.hide())
-	BSatus.pressed.connect( func():
-		Scen2.hide()
-		Scen1.show()
-		Scen4.hide()
-		Scen3.hide())
-	BSpeedTest.pressed.connect( func():
-		Scen3.show()
-		Scen2.hide()
-		Scen1.hide()
-		Scen4.hide())
-	Update.pressed.connect( func():
-		YouTube.check_website_status("https://www.youtube.com/")
-		Discord.check_website_status("https://discord.com/"))
-func _process(float):
+		4: 
+			stop_dpi()
+			get_tree().quit()
+
+func _process(_delta):
 	if Global.start == 1:
 		Global.start = 0
-		OS.shell_open(path)
-		LOff.hide()
-		LOn.show()
-		BStart.hide()
-		BOff.show()
-		YouTube.check_website_status("https://www.youtube.com/")
-		Discord.check_website_status("https://discord.com/")
-	if Global.quit == 1:
-		Global.quit = 0
-	if Input.is_action_just_pressed("Obnov"):
-		OS.shell_open(OS.get_executable_path().get_base_dir() + "/TrynDPI.exe")
-		get_tree().quit()
-	BYouTube.text = YouTube.printer
-	BDiscord.text = Discord.printer
+		run_dpi()
+	
+	$Scen1/Check/YouTube.text = YouTube.printer
+	$Scen1/Check/Discord.text = Discord.printer
+
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)

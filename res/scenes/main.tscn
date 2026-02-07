@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cp0fxtf7la6b" path="res://script/scens/main.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://d4df0j0pjrrp8" path="res://res/font/font2.ttf" id="2"]
 [ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3"]
-[ext_resource type="Texture2D" uid="uid://b0eilnoim1p41" path="res://res/icons/ext256.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
 [ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5"]
 [ext_resource type="Script" uid="uid://bq2eve14q2yry" path="res://script/scens/scen_3.gd" id="6"]
 [ext_resource type="Script" uid="uid://rc6xujlpkqqw" path="res://script/scens/del.gd" id="7"]
@@ -128,12 +128,12 @@ horizontal_alignment = 1
 
 [node name="LogoImg" type="TextureButton" parent="Scen1" unique_id=667698232]
 layout_mode = 0
-offset_left = 236.13498
-offset_top = 27.235
-offset_right = 492.13498
-offset_bottom = 283.235
-scale = Vector2(0.485, 0.485)
-texture_normal = ExtResource("4")
+offset_left = 242.13498
+offset_top = 32.235
+offset_right = 754.135
+offset_bottom = 544.235
+scale = Vector2(0.215, 0.215)
+texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1834199217]
 visible = false

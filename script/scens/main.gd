@@ -37,7 +37,7 @@ var pathOs = OS.get_executable_path()
 var language = OS.get_locale_language()
 func task_bar():
 	var si: StatusIndicator = StatusIndicator.new()
-	si.icon = load("res://res/icons/ext256.png")
+	si.icon = load("res://res/icons/ext512.png")
 	si.tooltip = "TrynDPI"
 	add_child(si)
 	var menu: PopupMenu = PopupMenu.new()

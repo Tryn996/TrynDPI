@@ -21,8 +21,8 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="TrynDPI"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/show_image=false
-config/icon="res://res/icons/ext256.png"
-config/windows_native_icon="res://res/icons/ext.ico"
+config/icon="uid://bphe0xixmxebf"
+config/windows_native_icon="res://res/icons/ext512.ico"
 
 [autoload]
 

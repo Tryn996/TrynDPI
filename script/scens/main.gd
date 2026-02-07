@@ -85,7 +85,9 @@ func menu_item_pressed(id):
 func _ready():
 	print(Global.path)
 	print(language)
-	print(save_path)
+	print(path_kill)
+	print(time)
+	print(pathOs)
 	Scen1.show()
 	Scen2.hide()
 	Scen3.hide()

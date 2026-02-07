@@ -1,0 +1,36 @@
+GDRE Tools v1.0.2
+Windows 10.0.19045, Quadro P4000, opengl3
+Opening file: E:\Programs\TrynDPI\TrynDPI.exe
+Loaded 15 imported files
+Detected Engine Version: 4.5.0.beta.2
+Detected Bytecode Revision: 4.5-beta.2 (ebc36a7)
+Verified 35 files, no errors detected!
+Extracted 35 files, no errors detected!
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     10
+Failed scripts:                         0
+Imported resources for export session:  15
+Successfully converted:                 15
+Lossy:                                  0
+Rewrote metadata:                       3
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.5.0.beta.2 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

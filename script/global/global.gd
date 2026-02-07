@@ -7,5 +7,5 @@ var global_path = 1
 var setting_start = 0
 var setting_window = 0
 var avtoload = 1
-var vers = str("2026.","06.02", "/2.7")
+var vers = str("2026.", "07.02", "/2.7")
 var trey = 1

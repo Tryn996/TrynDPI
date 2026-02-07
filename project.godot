@@ -30,7 +30,6 @@ YouTube="*res://script/check/yotube.gd"
 Discord="*res://script/check/discord.gd"
 Console="*uid://b6o507xrgbte3"
 Global="*uid://cnjspe151cw17"
-UpdateProg="*uid://dibmbj86y01ds"
 
 [console]
 

@@ -10,7 +10,6 @@ func _ready():
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
-	
 	if "--bat" in OS.get_cmdline_args():
 		run_dpi()
 		get_tree().quit()
@@ -18,7 +17,6 @@ func _ready():
 	main_buttons.start.pressed.connect(run_dpi)
 	main_buttons.off.pressed.connect(stop_dpi)
 	$Scen1/VBoxContainer/Restart.pressed.connect(restart_dpi)
-	$Scen1/VBoxContainer/QuitAll.pressed.connect(func(): stop_dpi(); await get_tree().create_timer(0.5).timeout; get_tree().quit())
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$SpeedTest.pressed.connect(switch_scene.bind("speed"))
@@ -60,15 +58,13 @@ func task_bar():
 	add_child(si)
 	var menu = PopupMenu.new()
 	add_child(menu)
-	for item in [["Включить", 1], ["Выключить", 2], ["Перезапустить", 5], ["Показать", 3], ["Выход", 4]]:
+	for item in [["Показать", 3], ["Перезапустить", 5], ["Выход", 4]]:
 		menu.add_item(item[0], item[1])
 	si.menu = menu.get_path()
 	menu.id_pressed.connect(menu_item_pressed)
 
 func menu_item_pressed(id):
 	match id:
-		1: run_dpi()
-		2: stop_dpi()
 		5: restart_dpi()
 		3: 
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, false)
@@ -81,7 +77,6 @@ func _process(_delta):
 	if Global.start == 1:
 		Global.start = 0
 		run_dpi()
-	
 	$Scen1/Check/YouTube.text = YouTube.printer
 	$Scen1/Check/Discord.text = Discord.printer
 

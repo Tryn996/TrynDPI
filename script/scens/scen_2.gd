@@ -22,19 +22,16 @@ func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat
 		var is_on = Global.get(global_var) == val_on
 		btn_on.visible = !is_on
 		btn_off.visible = is_on
-	
 	btn_on.pressed.connect(func(): 
 		Global.set(global_var, val_on)
 		if bat_on: OS.shell_open(base_dir + bat_on)
 		save_game(); update_ui.call())
-	
 	btn_off.pressed.connect(func(): 
 		Global.set(global_var, val_off)
 		if bat_off: OS.shell_open(base_dir + bat_off)
 		save_game(); update_ui.call())
-	
 	update_ui.call()
-
+	
 func save_game():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	for val in [Global.setting_start, Global.setting_window, Global.avtoload, Global.trey]:
@@ -45,5 +42,6 @@ func setup_console():
 	Console.add_command("off", func(): OS.shell_open(base_dir + "/data/bat/kill.bat"))
 	Console.add_command("clear", Console.clear)
 	Console.add_command("del_set", func():OS.move_to_trash(OS.get_data_dir() + "/TrynDpi/setting.save"))
+	Console.add_command("del", func():OS.shell_open(base_dir + "/unins000.exe"))
 func _process(_delta):
 	get_tree().set_auto_accept_quit(Global.trey == 1)

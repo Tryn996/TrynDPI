@@ -45,6 +45,11 @@ betterttv.net
 7tv.app
 7tv.io
 localizeapi.com
+telegram.org
+telegram.me
+tdesktop.com
+telegram.tips
+telegramusercontent.com
 t.me
 tg.dev
 tg.org

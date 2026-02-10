@@ -46,14 +46,15 @@ betterttv.net
 7tv.io
 localizeapi.com
 telegram.org
-telegram.me
 tdesktop.com
 telegram.tips
 telegramusercontent.com
-t.me
 tg.dev
 tg.org
 tx.me
+zws1.web.telegram.org
+zws2.web.telegram.org
+zws4.web.telegram.org
 teleg.xyz
 telegram.ai
 telegram.asia

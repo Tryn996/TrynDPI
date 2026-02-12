@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3"]
 [ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
 [ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://fyog404bw04j" path="res://res/icons/Роскомпозор.png" id="5_sff63"]
 [ext_resource type="Script" uid="uid://bq2eve14q2yry" path="res://script/scens/scen_3.gd" id="6"]
 [ext_resource type="Script" uid="uid://rc6xujlpkqqw" path="res://script/scens/del.gd" id="7"]
 [ext_resource type="Script" uid="uid://btbxrevmxbdmq" path="res://script/load/load.gd" id="8"]
@@ -20,7 +21,6 @@ grow_vertical = 2
 script = ExtResource("1")
 
 [node name="Scen1" type="Control" parent="." unique_id=69169306]
-visible = false
 anchors_preset = 0
 offset_left = -9.135
 offset_top = 31.765
@@ -130,6 +130,12 @@ offset_right = 754.135
 offset_bottom = 544.235
 scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
+
+[node name="Роскомпозор" type="Sprite2D" parent="Scen1" unique_id=1457396310]
+visible = false
+position = Vector2(297.135, 87.235)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_sff63")
 
 [node name="Scen2" type="Control" parent="." unique_id=1834199217]
 visible = false
@@ -244,6 +250,18 @@ text = "Открыть листы"
 layout_mode = 2
 text = "Открыть корневую папку"
 
+[node name="OptionButton" type="OptionButton" parent="Scen2/VBoxContainer" unique_id=737695787]
+visible = false
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "1440 на 1360"
+popup/item_0/id = 0
+popup/item_1/text = "720 на 680"
+popup/item_1/id = 1
+popup/item_2/text = "360 на 340"
+popup/item_2/id = 2
+
 [node name="Scen3" type="Control" parent="." unique_id=1016580805]
 visible = false
 anchors_preset = 0
@@ -268,13 +286,6 @@ text = "Тест на 10mb"
 [node name="Button2" type="Button" parent="Scen3/VBoxContainer" unique_id=1032554700]
 layout_mode = 2
 text = "Тест на 100mb"
-
-[node name="Button3" type="Button" parent="Scen3/VBoxContainer" unique_id=1352308437]
-layout_mode = 2
-tooltip_text = "Скорость загрузки — это то, насколько быстро информация 
-передается с вашего устройства обратно на сервер. 
-Это может быть обмен информацией с кем-то еще, игры, видеозвонки и т. д"
-text = "Тест скорости загрузки"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Scen3" unique_id=105567918]
 layout_mode = 0
@@ -373,9 +384,9 @@ offset_right = 48.0
 offset_bottom = 692.0
 uri = "https://github.com/Tryn996/TrynDPI/releases/latest"
 
+[connection signal="item_selected" from="Scen2/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Scen3/VBoxContainer/Button" to="Scen3" method="_on_button_pressed"]
 [connection signal="pressed" from="Scen3/VBoxContainer/Button2" to="Scen3" method="_on_button_2_pressed"]
-[connection signal="pressed" from="Scen3/VBoxContainer/Button3" to="Scen3" method="_on_button_3_pressed"]
 [connection signal="item_selected" from="Del/OptionButton" to="Del" method="_on_option_button_item_selected"]
 [connection signal="canceled" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_canceled"]
 [connection signal="confirmed" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_confirmed"]

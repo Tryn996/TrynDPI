@@ -5,8 +5,11 @@ extends Control
 
 var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
-
+var global_time = Time.get_datetime_dict_from_system()
 func _ready():
+	if global_time.day == 1 and global_time.month == 4 :
+		$Scen1/LogoImg.hide()
+		$"Scen1/Роскомпозор".show()
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
@@ -83,3 +86,12 @@ func _process(_delta):
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	if index == 1:
+		get_window().size = Vector2i(720, 680)
+	if index == 2:
+		get_window().size = Vector2i(360, 340)
+	if index == 0:
+		get_window().size = Vector2i(1440, 1360)

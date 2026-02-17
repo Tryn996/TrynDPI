@@ -7,9 +7,6 @@ var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
 var global_time = Time.get_datetime_dict_from_system()
 func _ready():
-	if global_time.day == 1 and global_time.month == 4 :
-		$Scen1/LogoImg.hide()
-		$"Scen1/Роскомпозор".show()
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers

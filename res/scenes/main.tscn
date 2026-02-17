@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3"]
 [ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
 [ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5"]
-[ext_resource type="Texture2D" uid="uid://fyog404bw04j" path="res://res/icons/Роскомпозор.png" id="5_sff63"]
 [ext_resource type="Script" uid="uid://bq2eve14q2yry" path="res://script/scens/scen_3.gd" id="6"]
 [ext_resource type="Script" uid="uid://rc6xujlpkqqw" path="res://script/scens/del.gd" id="7"]
 [ext_resource type="Script" uid="uid://btbxrevmxbdmq" path="res://script/load/load.gd" id="8"]
@@ -130,12 +129,6 @@ offset_right = 754.135
 offset_bottom = 544.235
 scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
-
-[node name="Роскомпозор" type="Sprite2D" parent="Scen1" unique_id=1457396310]
-visible = false
-position = Vector2(297.135, 87.235)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("5_sff63")
 
 [node name="Scen2" type="Control" parent="." unique_id=1834199217]
 visible = false

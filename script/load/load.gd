@@ -29,14 +29,18 @@ var path_kill = (OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat")
 var save_path = "user://save.save"
 var start = 0
 var path = Global.path
+var app = Global.app
 func load_game():
 	var file = FileAccess.open(save_path, FileAccess.READ)
 	Global.setting_start = file.get_var(Global.setting_start)
 	Global.setting_window = file.get_var(Global.setting_window)
 	Global.avtoload = file.get_var(Global.avtoload)
 	Global.trey = file.get_var(Global.trey)
+	Global.app =  file.get_var(Global.app)
 func _ready():
-	load_game()
+	if app == 1:
+		load_game()
+	app = 1
 	if Global.avtoload == 1:
 		SBOff3.hide()
 		SBOn3.show()

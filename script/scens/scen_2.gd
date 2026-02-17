@@ -33,7 +33,7 @@ func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat
 	update_ui.call()
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	for val in [Global.setting_start, Global.setting_window, Global.avtoload, Global.trey]:
+	for val in [Global.setting_start, Global.setting_window, Global.avtoload, Global.trey,Global.app]:
 		file.store_var(val)
 func setup_console():
 	Console.add_command("quit", func(): save(); get_tree().quit())

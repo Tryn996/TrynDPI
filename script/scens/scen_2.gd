@@ -13,10 +13,13 @@ func _ready():
 	setup_toggle($VBoxContainer/Windows_on, $VBoxContainer/Windows_off, "setting_window", 1, 0)
 	setup_toggle($VBoxContainer/Auto_open_on, $VBoxContainer/Auto_open_off, "avtoload", 2, 1, "/data/reg.bat", "/data/bat/reg_del.bat")
 	setup_toggle($VBoxContainer/Trey_on, $VBoxContainer/Trey_off, "trey", 1, 0)
-	$VBoxContainer/del.pressed.connect(func(): for s in [Scen1, self, $"../Scen3"]: s.hide(); Scen4.show())
-	$VBoxContainer/Full_settings.pressed.connect(func(): OS.shell_open(base_dir + "/data/service.bat"))
-	$VBoxContainer/Lists.pressed.connect(func(): OS.shell_open(base_dir + "/data/lists/list-general.txt"))
-	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
+	$"../VBoxContainer/del".pressed.connect(func(): for s in [Scen1, self, $"../Scen3"]: s.hide(); Scen4.show())
+	$"../VBoxContainer/Full_settings".pressed.connect(func(): OS.shell_open(base_dir + "/data/service.bat"))
+	$"../VBoxContainer/Lists".pressed.connect(func(): OS.shell_open(base_dir + "/data/lists/list-general.txt"))
+	$"../VBoxContainer/Corn".pressed.connect(func(): OS.shell_open(base_dir))
+	$"../VBoxContainer/Logs".pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI/logs/godot.log"))
+	$"../VBoxContainer/Bat".pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
+	print(OS.get_data_dir() + "TrynDPI/logs/godot.log")
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
 	var update_ui = func():
 		var is_on = Global.get(global_var) == val_on
@@ -42,7 +45,6 @@ func setup_console():
 	Console.add_command("clear", Console.clear)
 	Console.add_command("del_set", func():OS.move_to_trash(OS.get_data_dir() + "/TrynDpi/setting.save"))
 	Console.add_command("del", func():OS.shell_open(base_dir + "/unins000.exe"))
-	Console.add_command("window", func():$VBoxContainer/OptionButton.visible = !$VBoxContainer/OptionButton.visible)
 	Console.add_command("/?",func():Console.print_line("quit,on,off,clear,del_set,del,window,"))
 func _process(_delta):
 	get_tree().set_auto_accept_quit(Global.trey == 1)

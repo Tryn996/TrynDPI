@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 @onready var scenes = {"main": $Scen1, "settings": $Scen2, "speed": $Scen3, "del": $Del}
 @onready var status_labels = {"on": $Scen1/Status/On, "off": $Scen1/Status/Off}
 @onready var main_buttons = {"start": $Scen1/VBoxContainer/Start, "off": $Scen1/VBoxContainer/Quit}
@@ -7,6 +7,11 @@ var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
 var global_time = Time.get_datetime_dict_from_system()
 func _ready():
+	var screen_size = DisplayServer.screen_get_size()
+	var current_screen = DisplayServer.window_get_current_screen()
+	var exact_screen_size = DisplayServer.screen_get_size(current_screen)
+	get_window().size = Vector2i(exact_screen_size/2.1)
+	print(exact_screen_size/2.1)
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers

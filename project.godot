@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="TrynDPI"
-config/version="2.8.1"
+config/version="3.0"
 run/main_scene="res://res/scenes/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="TrynDPI"
@@ -38,8 +38,8 @@ theme="res://res/themes/main.tres"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=680
+window/size/viewport_width=1219
+window/size/viewport_height=685
 window/size/resizable=false
 window/size/maximize_disabled=true
 window/energy_saving/keep_screen_on=false

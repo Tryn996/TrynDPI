@@ -7,11 +7,20 @@ var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
 var global_time = Time.get_datetime_dict_from_system()
 func _ready():
-	var screen_size = DisplayServer.screen_get_size()
-	var current_screen = DisplayServer.window_get_current_screen()
-	var exact_screen_size = DisplayServer.screen_get_size(current_screen)
-	get_window().size = Vector2i(exact_screen_size/2.1)
-	print(exact_screen_size/2.1)
+	var screen_size = str(DisplayServer.screen_get_size())
+	print(screen_size)
+	if screen_size == "(2560,1440)":
+		var screen_size_x = DisplayServer.screen_get_size().x /2 -560
+		var screen_size_y = DisplayServer.screen_get_size().y /2 -40
+		get_window().size = Vector2i(screen_size_x,screen_size_y)
+	if screen_size == "(1920, 1080)":
+		var screen_size_x = DisplayServer.screen_get_size().x /1.8 -475
+		var screen_size_y = DisplayServer.screen_get_size().y /1.8 -40
+		get_window().size = Vector2i(screen_size_x,screen_size_y)
+	if screen_size == "(1600, 900)":
+		var screen_size_x = DisplayServer.screen_get_size().x /1.6 -475
+		var screen_size_y = DisplayServer.screen_get_size().y /1.6 -60
+		get_window().size = Vector2i(screen_size_x,screen_size_y)
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
@@ -56,7 +65,7 @@ func restart_dpi():
 func check_web():
 	YouTube.check_website_status("https://www.youtube.com/")
 	Discord.check_website_status("https://discord.com/")
-
+	Telegram.check_website_status("https://telegram.org/")
 func task_bar():
 	var si = StatusIndicator.new()
 	si.icon = load("res://res/icons/ext512.png")
@@ -84,7 +93,7 @@ func _process(_delta):
 		run_dpi()
 	$Scen1/Check/YouTube.text = YouTube.printer
 	$Scen1/Check/Discord.text = Discord.printer
-
+	$Scen1/Check/Telegram.text = Telegram.printer
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)

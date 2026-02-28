@@ -85,6 +85,10 @@ theme_override_font_sizes/font_size = 22
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
 
+[node name="Telegram" type="Button" parent="Scen1/Check" unique_id=303171600]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+
 [node name="Updeate" type="Button" parent="Scen1/Check" unique_id=1800209947]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
@@ -184,7 +188,7 @@ text = "Вкл"
 
 [node name="Text3" type="Label" parent="Scen2/VBoxContainer" unique_id=781929205]
 layout_mode = 2
-text = "Открывать TrynDPI при запуске системы"
+text = "Открывать обход при запуске системы"
 
 [node name="Auto_open_on" type="Button" parent="Scen2/VBoxContainer" unique_id=575437555]
 layout_mode = 2
@@ -225,6 +229,37 @@ popup/item_1/text = "720 на 680"
 popup/item_1/id = 1
 popup/item_2/text = "360 на 340"
 popup/item_2/id = 2
+
+[node name="Label" type="Label" parent="Scen2/VBoxContainer" unique_id=29915071]
+layout_mode = 2
+text = "Функции разработчика"
+
+[node name="del" type="Button" parent="Scen2/VBoxContainer" unique_id=1838988368]
+layout_mode = 2
+tooltip_text = "Удаляет TrynDPI с выбранным способом удалением"
+text = "Удалить TrynDPI"
+
+[node name="Corn" type="Button" parent="Scen2/VBoxContainer" unique_id=2042733915]
+layout_mode = 2
+text = "Открыть корневую папку"
+
+[node name="Full_settings" type="Button" parent="Scen2/VBoxContainer" unique_id=324645407]
+layout_mode = 2
+tooltip_text = "Открывает bat файл с которого можно более лучше настроить TrynDPi"
+text = "Более детальные настройки"
+
+[node name="Lists" type="Button" parent="Scen2/VBoxContainer" unique_id=771445599]
+layout_mode = 2
+tooltip_text = "Открывает txt файл со всеми сайтами которыми будет обходить TrynDPI"
+text = "Открыть листы"
+
+[node name="Logs" type="Button" parent="Scen2/VBoxContainer" unique_id=1907748998]
+layout_mode = 2
+text = "Отркыть логи"
+
+[node name="Bat" type="Button" parent="Scen2/VBoxContainer" unique_id=1896318409]
+layout_mode = 2
+text = "Открыть AppData"
 
 [node name="Scen3" type="Control" parent="." unique_id=1837318047]
 visible = false
@@ -309,13 +344,13 @@ script = ExtResource("8")
 
 [node name="L" type="ColorRect" parent="." unique_id=1442213650]
 offset_left = -4.0
-offset_right = 1219.0
+offset_right = 769.0
 offset_bottom = 33.0
 color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [node name="Settings" type="Button" parent="." unique_id=368408666]
-offset_left = 468.0
-offset_right = 799.0
+offset_left = 221.0
+offset_right = 517.0
 offset_bottom = 33.0
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
 text = "Настройки"
@@ -323,7 +358,7 @@ flat = true
 
 [node name="Status" type="Button" parent="." unique_id=1543814129]
 offset_left = 0.088858485
-offset_right = 467.11432
+offset_right = 222.01465
 offset_bottom = 32.999996
 rotation = -6.28319
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
@@ -331,65 +366,19 @@ text = "Статус"
 flat = true
 
 [node name="SpeedTest" type="Button" parent="." unique_id=821320343]
-offset_left = 799.0
-offset_right = 1219.0
+offset_left = 518.0
+offset_right = 721.0
 offset_bottom = 33.0
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
 text = "Сеть"
 flat = true
 
 [node name="Vers" type="LinkButton" parent="." unique_id=1686708760]
-offset_left = 8.0
+offset_left = 12.0
 offset_top = 652.0
-offset_right = 48.0
+offset_right = 247.0
 offset_bottom = 692.0
 uri = "https://github.com/Tryn996/TrynDPI/releases/latest"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2143739728]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -83.5
-offset_right = -123.999756
-offset_bottom = 116.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(1.255, 1.255)
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=781830685]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Быстрые функции"
-
-[node name="del" type="Button" parent="VBoxContainer" unique_id=1838988368]
-layout_mode = 2
-tooltip_text = "Удаляет TrynDPI с выбранным способом удалением"
-text = "Удалить TrynDPI"
-
-[node name="Corn" type="Button" parent="VBoxContainer" unique_id=2042733915]
-layout_mode = 2
-text = "Открыть корневую папку"
-
-[node name="Full_settings" type="Button" parent="VBoxContainer" unique_id=324645407]
-layout_mode = 2
-tooltip_text = "Открывает bat файл с которого можно более лучше настроить TrynDPi"
-text = "Более детальные настройки"
-
-[node name="Lists" type="Button" parent="VBoxContainer" unique_id=771445599]
-layout_mode = 2
-tooltip_text = "Открывает txt файл со всеми сайтами которыми будет обходить TrynDPI"
-text = "Открыть листы"
-
-[node name="Logs" type="Button" parent="VBoxContainer" unique_id=1907748998]
-layout_mode = 2
-text = "Отркыть логи"
-
-[node name="Bat" type="Button" parent="VBoxContainer" unique_id=1896318409]
-layout_mode = 2
-text = "Открыть AppData"
 
 [connection signal="pressed" from="Scen3/VBoxContainer/Button" to="Scen3" method="_on_button_pressed"]
 [connection signal="pressed" from="Scen3/VBoxContainer/Button2" to="Scen3" method="_on_button_2_pressed"]

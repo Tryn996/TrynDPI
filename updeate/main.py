@@ -4,27 +4,19 @@ import requests
 import subprocess
 
 
-# 1. Функция для правильного определения пути к EXE
 def get_base_path():
     if getattr(sys, 'frozen', False):
-        # Если запущено как EXE (PyInstaller)
         return os.path.dirname(sys.executable)
-    # Если запущен просто .py скрипт
     return os.path.dirname(os.path.abspath(__file__))
 
-
-# 2. Формируем полный путь к файлу версии
 BASE_DIR = get_base_path()
 VERSION_FILE = os.path.join(BASE_DIR, "vers.txt")
-
-# Остальные настройки
 FOLDER_NAME = os.path.join(BASE_DIR, "Updates")
 FILE_NAME = "TrynDPIupdeate.exe"
 FULL_PATH = os.path.join(FOLDER_NAME, FILE_NAME)
 
 
 def download_and_run():
-    # Проверяем, существует ли файл, прежде чем читать
     if not os.path.exists(VERSION_FILE):
         print(f"Ошибка: Файл не найден по пути {VERSION_FILE}")
         return

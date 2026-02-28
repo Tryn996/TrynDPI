@@ -18,6 +18,7 @@ func _ready():
 	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
 	$VBoxContainer/Logs.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI/logs/godot.log"))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
+	$VBoxContainer/updeate.pressed.connect(func():OS.shell_open(base_dir + "/updeate/updeate.bat"))
 	print(OS.get_data_dir() + "TrynDPI/logs/godot.log")
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
 	var update_ui = func():

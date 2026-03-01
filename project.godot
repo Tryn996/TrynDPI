@@ -40,11 +40,13 @@ theme="res://res/themes/main.tres"
 window/size/viewport_width=720
 window/size/viewport_height=680
 window/size/resizable=false
+window/size/transparent=true
 window/size/maximize_disabled=true
 window/energy_saving/keep_screen_on=false
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
+window/per_pixel_transparency/allowed=true
 
 [editor]
 
@@ -77,6 +79,7 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.158472, 0.158472, 0.158472, 1)
+viewport/transparent_background=true
 
 [steam]
 

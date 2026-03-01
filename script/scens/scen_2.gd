@@ -18,7 +18,10 @@ func _ready():
 	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
 	$VBoxContainer/Logs.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI/logs/godot.log"))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
-	$VBoxContainer/updeate.pressed.connect(func():OS.shell_open(base_dir + "/updeate/updeate.bat"))
+	$VBoxContainer/updeate.pressed.connect(func():
+		OS.shell_open(base_dir + "/updeate/main.exe")
+		get_tree().quit())
+	setup_toggle($VBoxContainer/tra_on,$VBoxContainer/tra_off,"transp",1,0)
 	print(OS.get_data_dir() + "TrynDPI/logs/godot.log")
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
 	var update_ui = func():
@@ -40,3 +43,11 @@ func save():
 		file.store_var(val)
 func _process(_delta):
 	get_tree().set_auto_accept_quit(Global.trey == 1)
+	if Global.transp == 1:
+		get_window().transparent_bg = true
+		get_viewport().transparent_bg = true
+		$"../ColorRect".visible = true
+	if Global.transp == 0:
+		get_window().transparent_bg = false
+		get_viewport().transparent_bg = false
+		$"../ColorRect".visible = false

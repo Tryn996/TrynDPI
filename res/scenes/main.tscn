@@ -16,7 +16,7 @@ script = ExtResource("1")
 visible = false
 offset_right = 726.0
 offset_bottom = 683.0
-color = Color(0.14117648, 0.14117648, 0.14117648, 0.7372549)
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.87058824)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
 visible = false
@@ -228,13 +228,13 @@ text = "Выкл"
 layout_mode = 2
 text = "Прозрачное окно приложения"
 
-[node name="tra_off" type="Button" parent="Scen2/VBoxContainer" unique_id=56520673]
+[node name="tra_on" type="Button" parent="Scen2/VBoxContainer" unique_id=56520673]
+visible = false
 layout_mode = 2
 tooltip_text = "Делает окно приложение полупрозрачным"
 text = "Выкл"
 
-[node name="tra_on" type="Button" parent="Scen2/VBoxContainer" unique_id=980916286]
-visible = false
+[node name="tra_off" type="Button" parent="Scen2/VBoxContainer" unique_id=980916286]
 layout_mode = 2
 tooltip_text = "Делает окно приложение полупрозрачным"
 text = "Вкл"
@@ -288,8 +288,7 @@ text = "Более детальные настройки"
 
 [node name="updeate" type="Button" parent="Scen2/VBoxContainer" unique_id=1434538857]
 layout_mode = 2
-tooltip_text = "Если новой версии не будет то будет ошибка, но если будет - консоль 
-несколько секунд будет пустой,а потом закроется"
+tooltip_text = "Обновляется приложение и запускается"
 text = "Обновить TrynDPI"
 
 [node name="Scen3" type="Control" parent="." unique_id=1837318047]

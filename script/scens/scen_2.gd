@@ -19,7 +19,7 @@ func _ready():
 	$VBoxContainer/Logs.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI/logs/godot.log"))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
 	$VBoxContainer/updeate.pressed.connect(func():
-		OS.shell_open(base_dir + "/updeate/main.exe")
+		OS.shell_open(base_dir + "/main.exe")
 		get_tree().quit())
 	setup_toggle($VBoxContainer/tra_on,$VBoxContainer/tra_off,"transp",1,0)
 	print(OS.get_data_dir() + "TrynDPI/logs/godot.log")
@@ -39,8 +39,9 @@ func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat
 	update_ui.call()
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	for val in [Global.setting_start, Global.setting_window, Global.avtoload, Global.trey,Global.app]:
+	for val in [Global.setting_start, Global.setting_window, Global.avtoload, Global.trey,Global.transp]:
 		file.store_var(val)
+		print(val)
 func _process(_delta):
 	get_tree().set_auto_accept_quit(Global.trey == 1)
 	if Global.transp == 1:

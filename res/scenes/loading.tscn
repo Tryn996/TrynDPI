@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://dlaa86cox4frw"]
+
+[ext_resource type="Script" uid="uid://dj0866lmahddj" path="res://script/load/loading.gd" id="1_htrxy"]
+[ext_resource type="Script" uid="uid://w2qkuvrr33ib" path="res://script/scens/panel.gd" id="2_4bdni"]
+[ext_resource type="Texture2D" uid="uid://b0eilnoim1p41" path="res://res/icons/ext256.png" id="2_g16k8"]
+
+[sub_resource type="Animation" id="Animation_g16k8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ext256:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Загрузка..."]
+}
+
+[sub_resource type="Animation" id="Animation_4bdni"]
+resource_name = "start"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ext256:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1465, 2.9, 5),
+"transitions": PackedFloat32Array(1, 0.34151018, 0.3186404, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.8, 0.8), Vector2(0.85, 0.85), Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 1.4333333, 2.1, 2.73, 3.3633332, 4.1633334, 4.83),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Загрузка", "Загрузка.", "Загрузка..", "Загрузка...", "Загрузка", "Загрузка.", "Загрузка..", "Загрузка..."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kh1en"]
+_data = {
+&"RESET": SubResource("Animation_g16k8"),
+&"start": SubResource("Animation_4bdni")
+}
+
+[node name="Loading" type="CanvasLayer" unique_id=1601685745]
+script = ExtResource("1_htrxy")
+
+[node name="Panel" type="Panel" parent="." unique_id=797016680]
+offset_right = 501.0
+offset_bottom = 501.0
+script = ExtResource("2_4bdni")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=50620213]
+offset_right = 503.0
+offset_bottom = 502.0
+mouse_filter = 2
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1341803099]
+libraries/ = SubResource("AnimationLibrary_kh1en")
+autoplay = &"start"
+
+[node name="Ext256" type="Sprite2D" parent="." unique_id=1496682242]
+position = Vector2(250, 181.00002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_g16k8")
+
+[node name="Label" type="Label" parent="." unique_id=2062930937]
+offset_left = 171.0
+offset_top = 357.0
+offset_right = 327.0
+offset_bottom = 379.0
+scale = Vector2(1.675, 1.675)
+text = "Загрузка..."
+
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]

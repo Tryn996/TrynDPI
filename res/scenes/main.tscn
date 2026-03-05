@@ -12,6 +12,11 @@
 [node name="Main" type="CanvasLayer" unique_id=669145523]
 script = ExtResource("1")
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=377914566]
+offset_right = 724.0
+offset_bottom = 685.0
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1128509315]
 visible = false
 offset_right = 726.0
@@ -147,9 +152,9 @@ script = ExtResource("5")
 [node name="VBoxContainer" type="VBoxContainer" parent="Scen2" unique_id=592964198]
 layout_mode = 0
 offset_left = 58.0
-offset_top = 23.0
-offset_right = 727.4737
-offset_bottom = 658.0
+offset_top = 12.335
+offset_right = 727.47363
+offset_bottom = 647.335
 scale = Vector2(0.95, 0.95)
 
 [node name="Text1" type="Label" parent="Scen2/VBoxContainer" unique_id=1798596075]
@@ -172,26 +177,6 @@ tooltip_text = "Когда запускается программа
 theme_override_fonts/font = ExtResource("2")
 text = "Вкл"
 
-[node name="Text2" type="Label" parent="Scen2/VBoxContainer" unique_id=392434813]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2")
-text = "При запуске сворачивать программу в трей"
-
-[node name="Windows_on" type="Button" parent="Scen2/VBoxContainer" unique_id=2087028979]
-layout_mode = 2
-tooltip_text = "Когда запускается программа она сворачивается в 
-третьей откуда вы можете ей управлять ей"
-theme_override_fonts/font = ExtResource("2")
-text = "Выкл"
-
-[node name="Windows_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1202408029]
-visible = false
-layout_mode = 2
-tooltip_text = "Когда запускается программа она сворачивается в 
-третьей откуда вы можете ей управлять ей"
-theme_override_fonts/font = ExtResource("2")
-text = "Вкл"
-
 [node name="Text3" type="Label" parent="Scen2/VBoxContainer" unique_id=781929205]
 layout_mode = 2
 text = "Открывать обход при запуске системы"
@@ -209,21 +194,6 @@ tooltip_text = "Когда запускается Windows сразу же
 запускается обход"
 text = "Вкл"
 
-[node name="Text4" type="Label" parent="Scen2/VBoxContainer" unique_id=92699734]
-layout_mode = 2
-text = "Сворачивать приложение в треей при нажатии на крестик"
-
-[node name="Trey_on" type="Button" parent="Scen2/VBoxContainer" unique_id=1862068848]
-layout_mode = 2
-tooltip_text = "Вкл/Выкл сворачивание в треей при нажатии на крестик"
-text = "Вкл"
-
-[node name="Trey_off" type="Button" parent="Scen2/VBoxContainer" unique_id=329076603]
-visible = false
-layout_mode = 2
-tooltip_text = "Вкл/Выкл сворачивание в треей при нажатии на крестик"
-text = "Выкл"
-
 [node name="Label3" type="Label" parent="Scen2/VBoxContainer" unique_id=708686396]
 layout_mode = 2
 text = "Прозрачное окно приложения"
@@ -238,18 +208,6 @@ text = "Выкл"
 layout_mode = 2
 tooltip_text = "Делает окно приложение полупрозрачным"
 text = "Вкл"
-
-[node name="OptionButton" type="OptionButton" parent="Scen2/VBoxContainer" unique_id=1015515091]
-visible = false
-layout_mode = 2
-selected = 1
-item_count = 3
-popup/item_0/text = "1440 на 1360"
-popup/item_0/id = 0
-popup/item_1/text = "720 на 680"
-popup/item_1/id = 1
-popup/item_2/text = "360 на 340"
-popup/item_2/id = 2
 
 [node name="Label" type="Label" parent="Scen2/VBoxContainer" unique_id=29915071]
 layout_mode = 2
@@ -286,10 +244,9 @@ layout_mode = 2
 tooltip_text = "Открывает bat файл с которого можно более лучше настроить TrynDPi"
 text = "Более детальные настройки"
 
-[node name="updeate" type="Button" parent="Scen2/VBoxContainer" unique_id=1434538857]
+[node name="del_up" type="Button" parent="Scen2/VBoxContainer" unique_id=504126310]
 layout_mode = 2
-tooltip_text = "Обновляется приложение и запускается"
-text = "Обновить TrynDPI"
+text = "Удалить файлы обновлений"
 
 [node name="Scen3" type="Control" parent="." unique_id=1837318047]
 visible = false
@@ -374,7 +331,7 @@ script = ExtResource("8")
 
 [node name="L" type="ColorRect" parent="." unique_id=1442213650]
 offset_left = -4.0
-offset_right = 769.0
+offset_right = 741.0
 offset_bottom = 33.0
 color = Color(0.121569, 0.121569, 0.121569, 1)
 
@@ -383,7 +340,7 @@ offset_left = 221.0
 offset_right = 517.0
 offset_bottom = 33.0
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
-text = "Настройки"
+text = "Параметры"
 flat = true
 
 [node name="Status" type="Button" parent="." unique_id=1543814129]

@@ -2,7 +2,7 @@ import os
 import sys
 import requests
 import subprocess
-
+from lastversion import lastversion
 
 def get_base_path():
     if getattr(sys, 'frozen', False):
@@ -11,21 +11,13 @@ def get_base_path():
 
 
 BASE_DIR = get_base_path()
-VERSION_FILE = os.path.join(BASE_DIR, "vers.txt")
-FOLDER_NAME = os.path.join(BASE_DIR, "Updates")
+FOLDER_NAME = os.path.join(BASE_DIR, "vers")
 
 
 def download_and_run():
-    if not os.path.exists(VERSION_FILE):
-        print(f"Ошибка: Файл не найден по пути {VERSION_FILE}")
-        return
-
-    with open(VERSION_FILE, "r") as f:
-        vers = f.read().strip()
-
+    vers = "v" + str(lastversion.latest("Tryn996/TrynDPI"))
     FILE_NAME = f"TrynDPIupdeate{vers}.exe"
     FULL_PATH = os.path.join(FOLDER_NAME, FILE_NAME)
-
     try:
         url = f"https://github.com/Tryn996/TrynDPI/releases/download/{vers}/TrynDPI.exe"
         if os.path.exists(FULL_PATH):

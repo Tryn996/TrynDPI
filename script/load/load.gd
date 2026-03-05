@@ -34,7 +34,6 @@ func load_game():
 	Global.setting_start = file.get_var(Global.setting_start)
 	Global.setting_window = file.get_var(Global.setting_window)
 	Global.avtoload = file.get_var(Global.avtoload)
-	Global.trey = file.get_var(Global.trey)
 	Global.transp = file.get_var(Global.transp)
 func _ready():
 	load_game()
@@ -50,12 +49,6 @@ func _ready():
 	if Global.avtoload == 2:
 		SBOn3.hide()
 		SBOff3.show()
-	if Global.setting_window == 1:
-		Global.setting_window = 0
-		SBOn2.hide()
-		SBOff2.show()
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_NO_FOCUS, true)
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED)
 	if Global.setting_start == 1:
 		Global.setting_start = 0
 		OS.shell_open(path)
@@ -65,9 +58,3 @@ func _ready():
 		LOn.show()
 		SBOn1.hide()
 		SBOff1.show()
-	if Global.trey == 1:
-		BTreyon4.hide()
-		BTreyoff4.show()
-	if Global.trey == 0:
-		BTreyoff4.hide()
-		BTreyon4.show()

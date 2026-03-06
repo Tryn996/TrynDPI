@@ -32,7 +32,6 @@ var path = Global.path
 func load_game():
 	var file = FileAccess.open(save_path, FileAccess.READ)
 	Global.setting_start = file.get_var(Global.setting_start)
-	Global.setting_window = file.get_var(Global.setting_window)
 	Global.avtoload = file.get_var(Global.avtoload)
 	Global.transp = file.get_var(Global.transp)
 func _ready():

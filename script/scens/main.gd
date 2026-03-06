@@ -66,9 +66,13 @@ func stop_dpi():
 	start_state = 0
 
 func restart_dpi():
-	stop_dpi()
-	await get_tree().create_timer(0.5).timeout
-	run_dpi()
+	OS.shell_open(path_kill)
+	update_ui(false)
+	await get_tree().create_timer(1.5).timeout
+	OS.shell_open(Global.path)
+	update_ui(true)
+	start_state = 1
+	check_web()
 
 func check_web():
 	YouTube.check_website_status("https://www.youtube.com/")
@@ -82,11 +86,3 @@ func _process(_delta):
 	$Scen1/Check/YouTube.text = YouTube.printer
 	$Scen1/Check/Discord.text = Discord.printer
 	$Scen1/Check/Telegram.text = Telegram.printer
-	
-func _on_option_button_item_selected(index: int) -> void:
-	if index == 1:
-		get_window().size = Vector2i(720, 680)
-	if index == 2:
-		get_window().size = Vector2i(360, 340)
-	if index == 0:
-		get_window().size = Vector2i(1440, 1360)

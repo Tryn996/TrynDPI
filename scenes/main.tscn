@@ -24,7 +24,6 @@ offset_bottom = 683.0
 color = Color(0.14117648, 0.14117648, 0.14117648, 0.87058824)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
@@ -141,6 +140,7 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0
@@ -254,7 +254,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = -52.745
 offset_right = -12.744999
-offset_bottom = 40.0
+offset_bottom = 40.000004
 scale = Vector2(1.185, 1.185)
 script = ExtResource("6")
 
@@ -297,7 +297,7 @@ anchors_preset = 0
 offset_left = 118.92
 offset_top = 41.465
 offset_right = 158.91992
-offset_bottom = 81.465
+offset_bottom = 81.465004
 script = ExtResource("7")
 
 [node name="OptionButton" type="OptionButton" parent="Del" unique_id=1210735772]

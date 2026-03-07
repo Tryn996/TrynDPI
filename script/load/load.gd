@@ -5,11 +5,8 @@ extends Node
 @onready var BStart = $"../Scen1/VBoxContainer/Start"
 @onready var BOff = $"../Scen1/VBoxContainer/Quit"
 @onready var BRestart = $"../Scen1/VBoxContainer/Restart"
-@onready var BQuit = $"../Scen1/VBoxContainer/QuitAll"
 @onready var SBOn1 = $"../Scen2/VBoxContainer/Auto_on"
 @onready var SBOff1 = $"../Scen2/VBoxContainer/Auto_off"
-@onready var SBOn2 = $"../Scen2/VBoxContainer/Windows_on"
-@onready var SBOff2 = $"../Scen2/VBoxContainer/Windows_off"
 @onready var SBOn3 = $"../Scen2/VBoxContainer/Auto_open_on"
 @onready var SBOff3 = $"../Scen2/VBoxContainer/Auto_open_off"
 @onready var BDel = $"../Scen2/VBoxContainer/del"
@@ -18,8 +15,6 @@ extends Node
 @onready var BDiscord = $"../Scen1/Check/Discord"
 @onready var BYouTube = $"../Scen1/Check/YouTube"
 @onready var BSpeedTest = $"../SpeedTest"
-@onready var BTreyon4 = $"../Scen2/VBoxContainer/Trey_on"
-@onready var BTreyoff4 = $"../Scen2/VBoxContainer/Trey_off"
 
 @onready var Vers = $"../Vers"
 @onready var LOn = $"../Scen1/Status/On"
@@ -34,6 +29,7 @@ func load_game():
 	Global.setting_start = file.get_var(Global.setting_start)
 	Global.avtoload = file.get_var(Global.avtoload)
 	Global.transp = file.get_var(Global.transp)
+	Global.upavt = file.get_var(Global.upavt)
 func _ready():
 	load_game()
 	if Global.transp == 1:
@@ -57,3 +53,9 @@ func _ready():
 		LOn.show()
 		SBOn1.hide()
 		SBOff1.show()
+	if Global.upavt == 0:
+		$"../Scen2/VBoxContainer/upavt_off".hide()
+		$"../Scen2/VBoxContainer/upavt_on".show()
+	if Global.upavt == 1:
+		$"../Scen2/VBoxContainer/upavt_off".show()
+		$"../Scen2/VBoxContainer/upavt_on".hide()

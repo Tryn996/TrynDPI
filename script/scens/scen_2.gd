@@ -11,6 +11,8 @@ func _ready():
 	setup_toggle($VBoxContainer/Auto_on, $VBoxContainer/Auto_off, "setting_start", 1, 0)
 	setup_toggle($VBoxContainer/Windows_on, $VBoxContainer/Windows_off, "setting_window", 1, 0)
 	setup_toggle($VBoxContainer/Auto_open_on, $VBoxContainer/Auto_open_off, "avtoload", 2, 1, "/data/reg.bat", "/data/bat/reg_del.bat")
+	setup_toggle($VBoxContainer/upavt_on,$VBoxContainer/upavt_off,"upavt",1,0)
+	setup_toggle($VBoxContainer/tra_on,$VBoxContainer/tra_off,"transp",1,0)
 	$VBoxContainer/del.pressed.connect(func(): for s in [Scen1, self, $"../Scen3"]: s.hide(); Scen4.show())
 	$VBoxContainer/Full_settings.pressed.connect(func(): OS.shell_open(base_dir + "/data/service.bat"))
 	$VBoxContainer/Lists.pressed.connect(func(): OS.shell_open(base_dir + "/data/lists/list-general.txt"))
@@ -20,7 +22,6 @@ func _ready():
 	$VBoxContainer/updeate.pressed.connect(func():
 		OS.shell_open(base_dir + "/updates/main.exe")
 		get_tree().quit())
-	setup_toggle($VBoxContainer/tra_on,$VBoxContainer/tra_off,"transp",1,0)
 	$VBoxContainer/del_up.pressed.connect(func():OS.move_to_trash(base_dir + "/updates/vers"))
 	print(OS.get_data_dir() + "TrynDPI/logs/godot.log")
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
@@ -39,7 +40,7 @@ func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat
 	update_ui.call()
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	for val in [Global.setting_start, Global.avtoload,Global.transp]:
+	for val in [Global.setting_start, Global.avtoload,Global.transp,Global.upavt]:
 		file.store_var(val)
 func  _process(delta: float) -> void:
 	if Global.transp == 1:

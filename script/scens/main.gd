@@ -19,16 +19,7 @@ func read_file(path):
 func _ready():
 	read_file(OS.get_executable_path().get_base_dir() + "/vers.txt")
 	get_window().borderless = false
-	var screen_size = str(DisplayServer.screen_get_size())
 	get_window().size = Vector2i(720, 680)
-	if screen_size == "(2560,1440)":
-		var screen_size_x = DisplayServer.screen_get_size().x /2 -560
-		var screen_size_y = DisplayServer.screen_get_size().y /2 -40
-		get_window().size = Vector2i(screen_size_x,screen_size_y)
-	if screen_size == "(1920, 1080)":
-		var screen_size_x = DisplayServer.screen_get_size().x /1.8 -475
-		var screen_size_y = DisplayServer.screen_get_size().y /1.8 -40
-		get_window().size = Vector2i(screen_size_x,screen_size_y)
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
@@ -42,7 +33,7 @@ func _ready():
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$SpeedTest.pressed.connect(switch_scene.bind("speed"))
 	$Scen1/Check/Updeate.pressed.connect(check_web)
-	if not global_con == Global.const_vers:
+	if not global_con == Global.const_vers and Global.upavt == 0:
 		OS.shell_open(OS.get_executable_path().get_base_dir() + "/updates/main.exe")
 func switch_scene(key):
 	for s in scenes.values(): s.hide()

@@ -24,6 +24,7 @@ offset_bottom = 683.0
 color = Color(0.14117648, 0.14117648, 0.14117648, 0.87058824)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
@@ -140,7 +141,6 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0
@@ -208,6 +208,19 @@ text = "Выкл"
 layout_mode = 2
 tooltip_text = "Делает окно приложение полупрозрачным"
 text = "Вкл"
+
+[node name="Label4" type="Label" parent="Scen2/VBoxContainer" unique_id=578821868]
+layout_mode = 2
+text = "Авто обновление"
+
+[node name="upavt_on" type="Button" parent="Scen2/VBoxContainer" unique_id=753640135]
+layout_mode = 2
+text = "Вкл"
+
+[node name="upavt_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1832515482]
+visible = false
+layout_mode = 2
+text = "Выкл"
 
 [node name="Label" type="Label" parent="Scen2/VBoxContainer" unique_id=29915071]
 layout_mode = 2

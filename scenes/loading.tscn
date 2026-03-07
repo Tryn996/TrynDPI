@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dj0866lmahddj" path="res://script/load/loading.gd" id="1_htrxy"]
 [ext_resource type="Script" uid="uid://w2qkuvrr33ib" path="res://script/scens/panel.gd" id="2_4bdni"]
 [ext_resource type="Texture2D" uid="uid://b0eilnoim1p41" path="res://res/icons/ext256.png" id="2_g16k8"]
+[ext_resource type="AudioStream" uid="uid://comuqayt761d2" path="res://res/sound/renix.mp3" id="5_2ytni"]
 
 [sub_resource type="Animation" id="Animation_g16k8"]
 length = 0.001
@@ -30,6 +31,47 @@ tracks/1/keys = {
 "update": 1,
 "values": ["Загрузка..."]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ext256:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_101rs"]
+resource_name = "remix"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ext256:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6333333, 3.6666667, 5),
+"transitions": PackedFloat32Array(1, 1.9318717, 0.32987693, 1),
+"update": 0,
+"values": [0.0, 3.141592653589793, 0.7853981633974483, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 1.4333333, 2.08, 2.71, 3.3433332, 4.1433334, 4.81),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Discord", "Discord.", "Discord..", "Discord...", "Discord", "Discord.", "Discord..", "Discord..."]
+}
 
 [sub_resource type="Animation" id="Animation_4bdni"]
 resource_name = "start"
@@ -54,15 +96,28 @@ tracks/1/path = NodePath("Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6333333, 1.4333333, 2.1, 2.73, 3.3633332, 4.1633334, 4.83),
+"times": PackedFloat32Array(0.020000001, 0.6533333, 1.4533333, 2.1, 2.73, 3.3633332, 4.1633334, 4.83),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Загрузка", "Загрузка.", "Загрузка..", "Загрузка...", "Загрузка", "Загрузка.", "Загрузка..", "Загрузка..."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Ext256:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6333333, 3.6666667, 5),
+"transitions": PackedFloat32Array(1, 1.9318717, 0.32987693, 1),
+"update": 0,
+"values": [0.0, 3.141592653589793, 0.7853981633974483, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kh1en"]
 _data = {
 &"RESET": SubResource("Animation_g16k8"),
+&"remix": SubResource("Animation_101rs"),
 &"start": SubResource("Animation_4bdni")
 }
 
@@ -96,5 +151,9 @@ offset_right = 297.0
 offset_bottom = 338.0
 scale = Vector2(1.675, 1.675)
 text = "Загрузка..."
+
+[node name="Renix" type="AudioStreamPlayer2D" parent="." unique_id=709490666]
+position = Vector2(221, 174)
+stream = ExtResource("5_2ytni")
 
 [connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]

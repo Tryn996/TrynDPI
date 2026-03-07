@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cp0fxtf7la6b" path="res://script/scens/main.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://d4df0j0pjrrp8" path="res://res/font/font2.ttf" id="2"]
 [ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3"]
+[ext_resource type="Script" uid="uid://s6ph88fd3rn" path="res://script/check/checker.gd" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
 [ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5"]
 [ext_resource type="Script" uid="uid://bq2eve14q2yry" path="res://script/scens/scen_3.gd" id="6"]
@@ -24,13 +25,13 @@ offset_bottom = 683.0
 color = Color(0.14117648, 0.14117648, 0.14117648, 0.87058824)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
 offset_top = 31.765
 offset_right = 30.865
 offset_bottom = 71.76497
+script = ExtResource("3_85g3d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Scen1" unique_id=844769153]
 layout_mode = 1
@@ -92,14 +93,17 @@ offset_bottom = 504.2339
 [node name="YouTube" type="Button" parent="Scen1/Check" unique_id=2123488312]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
+text = "YouTube: Обновление..."
 
 [node name="Discord" type="Button" parent="Scen1/Check" unique_id=2000858467]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
+text = "Discord: Обновление..."
 
 [node name="Telegram" type="Button" parent="Scen1/Check" unique_id=303171600]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
+text = "Telegram: Обновление..."
 
 [node name="Updeate" type="Button" parent="Scen1/Check" unique_id=1800209947]
 layout_mode = 2
@@ -141,6 +145,7 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0
@@ -380,6 +385,7 @@ offset_right = 247.0
 offset_bottom = 692.0
 uri = "https://github.com/Tryn996/TrynDPI/releases/latest"
 
+[connection signal="pressed" from="Scen1/Check/Updeate" to="Scen1" method="_on_updeate_pressed"]
 [connection signal="pressed" from="Scen3/VBoxContainer/Button" to="Scen3" method="_on_button_pressed"]
 [connection signal="pressed" from="Scen3/VBoxContainer/Button2" to="Scen3" method="_on_button_2_pressed"]
 [connection signal="item_selected" from="Del/OptionButton" to="Del" method="_on_option_button_item_selected"]

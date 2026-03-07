@@ -32,7 +32,7 @@ func _ready():
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$SpeedTest.pressed.connect(switch_scene.bind("speed"))
-	$Scen1/Check/Updeate.pressed.connect(check_web)
+	#$Scen1/Check/Updeate.pressed.connect(check_web)
 	if not global_con == Global.const_vers and Global.upavt == 0:
 		OS.shell_open(OS.get_executable_path().get_base_dir() + "/updates/main.exe")
 func switch_scene(key):
@@ -49,7 +49,6 @@ func run_dpi():
 	OS.shell_open(Global.path)
 	update_ui(true)
 	start_state = 1
-	check_web()
 
 func stop_dpi():
 	OS.shell_open(path_kill)
@@ -63,17 +62,8 @@ func restart_dpi():
 	OS.shell_open(Global.path)
 	update_ui(true)
 	start_state = 1
-	check_web()
-
-func check_web():
-	YouTube.check_website_status("https://www.youtube.com/")
-	Discord.check_website_status("https://discord.com/")
-	Telegram.check_website_status("https://telegram.org/")
 
 func _process(_delta):
 	if Global.start == 1:
 		Global.start = 0
 		run_dpi()
-	$Scen1/Check/YouTube.text = YouTube.printer
-	$Scen1/Check/Discord.text = Discord.printer
-	$Scen1/Check/Telegram.text = Telegram.printer

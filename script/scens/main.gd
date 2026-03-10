@@ -6,7 +6,7 @@ extends CanvasLayer
 var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
 var global_time = Time.get_datetime_dict_from_system()
-var global_con = "12"
+var global_con = "18"
 func read_file(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file:
@@ -23,18 +23,15 @@ func _ready():
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
-	if "--bat" in OS.get_cmdline_args():
-		run_dpi()
-		get_tree().quit()
 	main_buttons.start.pressed.connect(run_dpi)
 	main_buttons.off.pressed.connect(stop_dpi)
 	$Scen1/VBoxContainer/Restart.pressed.connect(restart_dpi)
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$SpeedTest.pressed.connect(switch_scene.bind("speed"))
-	#$Scen1/Check/Updeate.pressed.connect(check_web)
 	if not global_con == Global.const_vers and Global.upavt == 0:
-		OS.shell_open(OS.get_executable_path().get_base_dir() + "/updates/main.exe")
+		OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
+		get_tree().quit()
 func switch_scene(key):
 	for s in scenes.values(): s.hide()
 	scenes[key].show()

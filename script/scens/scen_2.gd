@@ -14,15 +14,13 @@ func _ready():
 	setup_toggle($VBoxContainer/upavt_on,$VBoxContainer/upavt_off,"upavt",1,0)
 	setup_toggle($VBoxContainer/tra_on,$VBoxContainer/tra_off,"transp",1,0)
 	$VBoxContainer/del.pressed.connect(func(): for s in [Scen1, self, $"../Scen3"]: s.hide(); Scen4.show())
-	$VBoxContainer/Full_settings.pressed.connect(func(): OS.shell_open(base_dir + "/data/service.bat"))
 	$VBoxContainer/Lists.pressed.connect(func(): OS.shell_open(base_dir + "/data/lists/list-general.txt"))
 	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
-	$VBoxContainer/Logs.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI/logs/godot.log"))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
 	$VBoxContainer/updeate.pressed.connect(func():
 		OS.shell_open(base_dir + "/updates/main.exe")
 		get_tree().quit())
-	$VBoxContainer/del_up.pressed.connect(func():OS.move_to_trash(base_dir + "/updates/vers"))
+	$VBoxContainer/del_up.pressed.connect(func():OS.move_to_trash(base_dir + "/data/updates/vers"))
 	print(OS.get_data_dir() + "TrynDPI/logs/godot.log")
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
 	var update_ui = func():

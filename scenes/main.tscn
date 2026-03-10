@@ -25,6 +25,7 @@ offset_bottom = 683.0
 color = Color(0.14117648, 0.14117648, 0.14117648, 0.87058824)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
@@ -145,7 +146,6 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0
@@ -240,10 +240,6 @@ layout_mode = 2
 tooltip_text = "Открывает txt файл со всеми сайтами которыми будет обходить TrynDPI"
 text = "Открыть листы"
 
-[node name="Logs" type="Button" parent="Scen2/VBoxContainer" unique_id=1907748998]
-layout_mode = 2
-text = "Отркыть логи"
-
 [node name="Bat" type="Button" parent="Scen2/VBoxContainer" unique_id=1896318409]
 layout_mode = 2
 text = "Открыть AppData"
@@ -256,11 +252,6 @@ text = "Взаимодействие с приложением"
 layout_mode = 2
 tooltip_text = "Удаляет TrynDPI с выбранным способом удалением"
 text = "Удалить TrynDPI"
-
-[node name="Full_settings" type="Button" parent="Scen2/VBoxContainer" unique_id=324645407]
-layout_mode = 2
-tooltip_text = "Открывает bat файл с которого можно более лучше настроить TrynDPi"
-text = "Более детальные настройки"
 
 [node name="del_up" type="Button" parent="Scen2/VBoxContainer" unique_id=504126310]
 layout_mode = 2

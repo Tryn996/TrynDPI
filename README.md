@@ -1,7 +1,7 @@
 >>>>>>>
 # TrynDPI Русский
 Эта программа позволит вам обходить блокировки на территории РФ\
-Оболочка сделана на Godot 4.6\
+Оболочка сделана на Godot 4.6
 ## Что дает вам программа?
 Удобный интерфейс со множеством полезных функций, к которым относится:\
 1)Удобное добавление сайтов которые вы хотите обойти\
@@ -14,7 +14,7 @@
 
 # TrynDPI English
 This program will allow you to bypass the blockages on the territory of the Russian Federation.\
-The shell is made on Godot 4.6\
+The shell is made on Godot 4.6
 ## What does the program give you?
 A user-friendly interface with many useful functions, which include:\
 1)Easily add sites that you want to bypass\

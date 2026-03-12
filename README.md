@@ -1,5 +1,5 @@
 >>>>>>>
-# TrynDPI
+# TrynDPI Русский
 Эта программа позволит вам обходить блокировки на территории РФ\
 Оболочка сделана на Godot 4.6\
 ## Что дает вам программа?
@@ -11,8 +11,8 @@
 1)Скачайте устоновщик и окройте его\
 2)Пройдите устоновку и запустите\
 3)Готово
->>>>>>>
-# TrynDPI
+
+# TrynDPI English
 This program will allow you to bypass the blockages on the territory of the Russian Federation.\
 The shell is made on Godot 4.6\
 ## What does the program give you?

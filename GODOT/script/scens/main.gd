@@ -1,5 +1,5 @@
 extends CanvasLayer
-@onready var scenes = {"main": $Scen1, "settings": $Scen2, "speed": $Scen3, "del": $Del}
+@onready var scenes = {"main": $Scen1, "settings": $Scen2, "del": $Del}
 @onready var status_labels = {"on": $Scen1/Status/On, "off": $Scen1/Status/Off}
 @onready var main_buttons = {"start": $Scen1/VBoxContainer/Start, "off": $Scen1/VBoxContainer/Quit}
 
@@ -28,10 +28,10 @@ func _ready():
 	$Scen1/VBoxContainer/Restart.pressed.connect(restart_dpi)
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
-	$SpeedTest.pressed.connect(switch_scene.bind("speed"))
-	if not global_con == Global.const_vers and Global.upavt == 0:
-		OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
-		get_tree().quit()
+	if not OS.is_debug_build():
+		if not global_con == Global.const_vers and Global.upavt == 0:
+			OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
+			get_tree().quit()
 func switch_scene(key):
 	for s in scenes.values(): s.hide()
 	scenes[key].show()

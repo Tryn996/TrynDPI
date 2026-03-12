@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://s6ph88fd3rn" path="res://script/check/checker.gd" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
 [ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5"]
-[ext_resource type="Script" uid="uid://bq2eve14q2yry" path="res://script/scens/scen_3.gd" id="6"]
 [ext_resource type="Script" uid="uid://rc6xujlpkqqw" path="res://script/scens/del.gd" id="7"]
 [ext_resource type="Script" uid="uid://btbxrevmxbdmq" path="res://script/load/load.gd" id="8"]
 
@@ -22,7 +21,7 @@ color = Color(0.15686275, 0.15686275, 0.15686275, 1)
 visible = false
 offset_right = 726.0
 offset_bottom = 683.0
-color = Color(0.14117648, 0.14117648, 0.14117648, 0.87058824)
+color = Color(0.18431373, 0.18431373, 0.18431373, 0.70980394)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
 visible = false
@@ -257,48 +256,6 @@ text = "Удалить TrynDPI"
 layout_mode = 2
 text = "Удалить файлы обновлений"
 
-[node name="Scen3" type="Control" parent="." unique_id=1837318047]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -52.745
-offset_right = -12.744999
-offset_bottom = 40.000004
-scale = Vector2(1.185, 1.185)
-script = ExtResource("6")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Scen3" unique_id=795565705]
-layout_mode = 0
-offset_left = 193.87766
-offset_top = 271.72998
-offset_right = 445.87766
-offset_bottom = 369.72998
-scale = Vector2(1.28, 1.28)
-
-[node name="Button" type="Button" parent="Scen3/VBoxContainer" unique_id=765577376]
-layout_mode = 2
-text = "Тест на 10mb"
-
-[node name="Button2" type="Button" parent="Scen3/VBoxContainer" unique_id=1956559124]
-layout_mode = 2
-text = "Тест на 100mb"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Scen3" unique_id=796259006]
-layout_mode = 0
-offset_left = 109.489456
-offset_top = 192.40508
-offset_right = 590.50214
-offset_bottom = 270.4051
-tooltip_text = "*Данная информация приблизительна и не является 100% точной"
-
-[node name="Label" type="Label" parent="Scen3/VBoxContainer2" unique_id=1578597832]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Нажмите на кнопку для проверки"
-
-[node name="ProgressBar" type="ProgressBar" parent="Scen3/VBoxContainer2" unique_id=1810313709]
-layout_mode = 2
-
 [node name="Del" type="Control" parent="." unique_id=66849279]
 visible = false
 layout_mode = 3
@@ -345,8 +302,8 @@ offset_bottom = 33.0
 color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [node name="Settings" type="Button" parent="." unique_id=368408666]
-offset_left = 221.0
-offset_right = 517.0
+offset_left = 338.0
+offset_right = 726.0
 offset_bottom = 33.0
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
 text = "Параметры"
@@ -354,19 +311,11 @@ flat = true
 
 [node name="Status" type="Button" parent="." unique_id=1543814129]
 offset_left = 0.088858485
-offset_right = 222.01465
+offset_right = 338.14114
 offset_bottom = 32.999996
 rotation = -6.28319
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
 text = "Статус"
-flat = true
-
-[node name="SpeedTest" type="Button" parent="." unique_id=821320343]
-offset_left = 518.0
-offset_right = 721.0
-offset_bottom = 33.0
-theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
-text = "Сеть"
 flat = true
 
 [node name="Vers" type="LinkButton" parent="." unique_id=1686708760]
@@ -377,8 +326,6 @@ offset_bottom = 692.0
 uri = "https://github.com/Tryn996/TrynDPI/releases/latest"
 
 [connection signal="pressed" from="Scen1/Check/Updeate" to="Scen1" method="_on_updeate_pressed"]
-[connection signal="pressed" from="Scen3/VBoxContainer/Button" to="Scen3" method="_on_button_pressed"]
-[connection signal="pressed" from="Scen3/VBoxContainer/Button2" to="Scen3" method="_on_button_2_pressed"]
 [connection signal="item_selected" from="Del/OptionButton" to="Del" method="_on_option_button_item_selected"]
 [connection signal="canceled" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_canceled"]
 [connection signal="confirmed" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_confirmed"]

@@ -155,5 +155,6 @@ text = "Загрузка..."
 [node name="Renix" type="AudioStreamPlayer2D" parent="." unique_id=709490666]
 position = Vector2(221, 174)
 stream = ExtResource("5_2ytni")
+playback_type = 1
 
 [connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]

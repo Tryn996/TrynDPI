@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var remix = 0 
-
+var args = OS.get_cmdline_args()
 func _ready() -> void:
 		var random_number = randi_range(1, 50)
 		print(random_number)

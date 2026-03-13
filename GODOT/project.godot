@@ -8,11 +8,29 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="TrynUP"
-config/version="1.0"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/name="TrynDPI"
+config/version="3.7.3"
+run/main_scene="uid://dlaa86cox4frw"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="TrynDPI"
+config/features=PackedStringArray("4.6", "Mobile")
+boot_splash/show_image=false
+config/icon="uid://bphe0xixmxebf"
+config/windows_native_icon="res://res/icons/ext.ico"
+
+[autoload]
+
+Global="*uid://cnjspe151cw17"
+
+[console]
+
+theme="res://res/themes/main.tres"
 
 [display]
 
@@ -20,14 +38,42 @@ window/size/viewport_width=450
 window/size/viewport_height=450
 window/size/resizable=false
 window/size/borderless=true
+window/size/transparent=true
+window/size/maximize_disabled=true
+window/energy_saving/keep_screen_on=false
+window/subwindows/embed_subwindows=false
+window/stretch/aspect="keep_width"
+window/per_pixel_transparency/allowed=true
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Tryn/Desktop/test.ogv"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[gui]
+
+theme/custom="res://res/themes/main.tres"
 
 [physics]
 
-3d/physics_engine="Jolt Physics"
+2d/run_on_separate_thread=true
+2d/physics_engine="GodotPhysics2D"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.158472, 0.158472, 0.158472, 1)
+viewport/transparent_background=true
+
+[steam]
+
+initialization/app_id=0
+initialization/initialize_on_startup=false
+initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

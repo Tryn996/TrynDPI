@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://dnxd7nhjj8lte"]
+
+[ext_resource type="Script" uid="uid://cp0fxtf7la6b" path="res://script/scens/main.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://d4df0j0pjrrp8" path="res://res/font/font2.ttf" id="2"]
+[ext_resource type="Script" uid="uid://cxdmcj4dwg2pc" path="res://script/load/texture_rect.gd" id="2_85g3d"]
+[ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3"]
+[ext_resource type="Script" uid="uid://s6ph88fd3rn" path="res://script/check/checker.gd" id="3_85g3d"]
+[ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
+[ext_resource type="Script" uid="uid://cohvv16kaj2ws" path="res://script/scens/scen_2.gd" id="5"]
+[ext_resource type="Script" uid="uid://rc6xujlpkqqw" path="res://script/scens/del.gd" id="7"]
+[ext_resource type="Script" uid="uid://btbxrevmxbdmq" path="res://script/load/load.gd" id="8"]
+
+[node name="Main" type="CanvasLayer" unique_id=669145523]
+script = ExtResource("1")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=377914566]
+offset_right = 724.0
+offset_bottom = 685.0
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1128509315]
+visible = false
+offset_right = 726.0
+offset_bottom = 683.0
+color = Color(0.18431373, 0.18431373, 0.18431373, 0.70980394)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1277073008]
+offset_right = 726.0
+offset_bottom = 683.0
+script = ExtResource("2_85g3d")
+
+[node name="Scen1" type="Control" parent="." unique_id=555728920]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -9.135
+offset_top = 31.765
+offset_right = 30.865
+offset_bottom = 71.76497
+script = ExtResource("3_85g3d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scen1" unique_id=844769153]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 98.785
+offset_top = 225.64
+offset_right = 364.7587
+offset_bottom = 323.64032
+grow_horizontal = 2
+scale = Vector2(1.9, 1.9)
+
+[node name="Start" type="Button" parent="Scen1/VBoxContainer" unique_id=1618613237]
+layout_mode = 2
+text = "Старт"
+
+[node name="Quit" type="Button" parent="Scen1/VBoxContainer" unique_id=181684279]
+visible = false
+layout_mode = 2
+text = "Выключить"
+
+[node name="Restart" type="Button" parent="Scen1/VBoxContainer" unique_id=958534262]
+layout_mode = 2
+text = "Перезапуск"
+
+[node name="Status" type="VBoxContainer" parent="Scen1" unique_id=1447106994]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 288.835
+offset_top = 151.83
+offset_right = 336.835
+offset_bottom = 173.83
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+
+[node name="Off" type="Label" parent="Scen1/Status" unique_id=1367247488]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2")
+text = "Выкл"
+
+[node name="On" type="Label" parent="Scen1/Status" unique_id=1624981222]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2")
+text = "Вкл"
+
+[node name="Check" type="VBoxContainer" parent="Scen1" unique_id=1443560696]
+layout_mode = 0
+offset_left = 119.135
+offset_top = 409.23502
+offset_right = 624.13495
+offset_bottom = 504.2339
+
+[node name="YouTube" type="Button" parent="Scen1/Check" unique_id=2123488312]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "YouTube: Обновление..."
+
+[node name="Discord" type="Button" parent="Scen1/Check" unique_id=2000858467]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Discord: Обновление..."
+
+[node name="Telegram" type="Button" parent="Scen1/Check" unique_id=303171600]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Telegram: Обновление..."
+
+[node name="Updeate" type="Button" parent="Scen1/Check" unique_id=1800209947]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Обновить"
+
+[node name="Logo" type="Label" parent="Scen1" unique_id=1892495408]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 148.135
+offset_top = 28.235
+offset_right = 640.135
+offset_bottom = 165.235
+grow_horizontal = 2
+scale = Vector2(0.82, 0.82)
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 136
+text = "Tr   yn Dpi"
+
+[node name="Label" type="Label" parent="Scen1" unique_id=199990480]
+layout_mode = 0
+offset_left = 119.135
+offset_top = 360.235
+offset_right = 621.1349
+offset_bottom = 403.235
+theme_override_font_sizes/font_size = 22
+text = "Статус приложений"
+horizontal_alignment = 1
+
+[node name="LogoImg" type="TextureButton" parent="Scen1" unique_id=866768788]
+layout_mode = 0
+offset_left = 242.13498
+offset_top = 32.235
+offset_right = 754.135
+offset_bottom = 544.235
+scale = Vector2(0.215, 0.215)
+texture_normal = ExtResource("4_x33ci")
+
+[node name="Scen2" type="Control" parent="." unique_id=1760535548]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = 36.63
+offset_right = -15.0
+offset_bottom = 833.63
+script = ExtResource("5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scen2" unique_id=592964198]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 12.335
+offset_right = 727.47363
+offset_bottom = 647.335
+scale = Vector2(0.95, 0.95)
+
+[node name="Text1" type="Label" parent="Scen2/VBoxContainer" unique_id=1798596075]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+text = "Автоматически запускать обход при в ходе в приложение"
+
+[node name="Auto_on" type="Button" parent="Scen2/VBoxContainer" unique_id=383562392]
+layout_mode = 2
+tooltip_text = "Когда запускается программа 
+сразу же запускается обход"
+theme_override_fonts/font = ExtResource("2")
+text = "Выкл"
+
+[node name="Auto_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1392311930]
+visible = false
+layout_mode = 2
+tooltip_text = "Когда запускается программа 
+сразу же запускается обход"
+theme_override_fonts/font = ExtResource("2")
+text = "Вкл"
+
+[node name="Text3" type="Label" parent="Scen2/VBoxContainer" unique_id=781929205]
+layout_mode = 2
+text = "Открывать обход при запуске системы"
+
+[node name="Auto_open_on" type="Button" parent="Scen2/VBoxContainer" unique_id=575437555]
+layout_mode = 2
+tooltip_text = "Когда запускается Windows сразу же 
+запускается обход"
+text = "Выкл"
+
+[node name="Auto_open_off" type="Button" parent="Scen2/VBoxContainer" unique_id=672058410]
+visible = false
+layout_mode = 2
+tooltip_text = "Когда запускается Windows сразу же 
+запускается обход"
+text = "Вкл"
+
+[node name="Label3" type="Label" parent="Scen2/VBoxContainer" unique_id=708686396]
+layout_mode = 2
+text = "Прозрачное окно приложения"
+
+[node name="tra_on" type="Button" parent="Scen2/VBoxContainer" unique_id=56520673]
+visible = false
+layout_mode = 2
+tooltip_text = "Делает окно приложение полупрозрачным"
+text = "Выкл"
+
+[node name="tra_off" type="Button" parent="Scen2/VBoxContainer" unique_id=980916286]
+layout_mode = 2
+tooltip_text = "Делает окно приложение полупрозрачным"
+text = "Вкл"
+
+[node name="Label4" type="Label" parent="Scen2/VBoxContainer" unique_id=578821868]
+layout_mode = 2
+text = "Авто обновление"
+
+[node name="upavt_on" type="Button" parent="Scen2/VBoxContainer" unique_id=753640135]
+layout_mode = 2
+text = "Вкл"
+
+[node name="upavt_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1832515482]
+visible = false
+layout_mode = 2
+text = "Выкл"
+
+[node name="Label" type="Label" parent="Scen2/VBoxContainer" unique_id=29915071]
+layout_mode = 2
+text = "Функции разработчика"
+
+[node name="Corn" type="Button" parent="Scen2/VBoxContainer" unique_id=2042733915]
+layout_mode = 2
+text = "Открыть корневую папку"
+
+[node name="Lists" type="Button" parent="Scen2/VBoxContainer" unique_id=771445599]
+layout_mode = 2
+tooltip_text = "Открывает txt файл со всеми сайтами которыми будет обходить TrynDPI"
+text = "Открыть листы"
+
+[node name="Bat" type="Button" parent="Scen2/VBoxContainer" unique_id=1896318409]
+layout_mode = 2
+text = "Открыть AppData"
+
+[node name="Label2" type="Label" parent="Scen2/VBoxContainer" unique_id=81991486]
+layout_mode = 2
+text = "Взаимодействие с приложением"
+
+[node name="del" type="Button" parent="Scen2/VBoxContainer" unique_id=1838988368]
+layout_mode = 2
+tooltip_text = "Удаляет TrynDPI с выбранным способом удалением"
+text = "Удалить TrynDPI"
+
+[node name="del_up" type="Button" parent="Scen2/VBoxContainer" unique_id=504126310]
+layout_mode = 2
+text = "Удалить файлы обновлений"
+
+[node name="Del" type="Control" parent="." unique_id=66849279]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 118.92
+offset_top = 41.465
+offset_right = 158.91992
+offset_bottom = 81.465004
+script = ExtResource("7")
+
+[node name="OptionButton" type="OptionButton" parent="Del" unique_id=1210735772]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 232.0
+offset_right = 437.0
+offset_bottom = 262.0
+item_count = 2
+popup/item_0/text = "Обычное"
+popup/item_0/id = 0
+popup/item_1/text = "Полное (удаление всех настроек)"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Del" unique_id=230453959]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 206.0
+offset_right = 338.0
+offset_bottom = 228.0
+text = "Способ удаления"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Del" unique_id=148490756]
+title = "Подтверждение"
+ok_button_text = "Да"
+dialog_text = "Вы уверены?"
+cancel_button_text = "Назад"
+
+[node name="Load" type="Node" parent="." unique_id=575976144]
+script = ExtResource("8")
+
+[node name="L" type="ColorRect" parent="." unique_id=1442213650]
+offset_left = -4.0
+offset_right = 741.0
+offset_bottom = 33.0
+color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="Settings" type="Button" parent="." unique_id=368408666]
+offset_left = 338.0
+offset_right = 726.0
+offset_bottom = 33.0
+theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+text = "Параметры"
+flat = true
+
+[node name="Status" type="Button" parent="." unique_id=1543814129]
+offset_left = 0.088858485
+offset_right = 338.14114
+offset_bottom = 32.999996
+rotation = -6.28319
+theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+text = "Статус"
+flat = true
+
+[node name="Vers" type="LinkButton" parent="." unique_id=1686708760]
+offset_left = 12.0
+offset_top = 652.0
+offset_right = 247.0
+offset_bottom = 692.0
+uri = "https://github.com/Tryn996/TrynDPI/releases/latest"
+
+[connection signal="pressed" from="Scen1/Check/Updeate" to="Scen1" method="_on_updeate_pressed"]
+[connection signal="item_selected" from="Del/OptionButton" to="Del" method="_on_option_button_item_selected"]
+[connection signal="canceled" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="Del/ConfirmationDialog" to="Del" method="_on_confirmation_dialog_confirmed"]

@@ -4,6 +4,20 @@ import requests
 import subprocess
 from lastversion import lastversion
 
+def main():
+    arguments = sys.argv[1:]
+
+    if "--vers" in arguments:
+        print("Запуск в режиме администратора")
+
+    if len(arguments) > 0:
+        vers = "v" + str(lastversion.latest("Tryn996/TrynDPI"))
+        with open("vers.txt", "w", encoding="utf-8") as file:
+            file.write(vers)
+    else:
+        download_and_run()
+
+
 def get_base_path():
     if getattr(sys, 'frozen', False):
         return os.path.dirname(sys.executable)
@@ -34,10 +48,8 @@ def download_and_run():
                 for chunk in response.iter_content(chunk_size=8192):
                     f.write(chunk)
             print("OK download")
-
         print("OK setup")
-        silent_flags = ["/VERYSILENT"]
-        subprocess.run([FULL_PATH] + silent_flags, shell=True)
+        subprocess.run(FULL_PATH,shell=True)
 
     except Exception as e:
         print(f"Ошибка: {e}")

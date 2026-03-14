@@ -3,6 +3,8 @@ import sys
 import requests
 import subprocess
 from lastversion import lastversion
+from pathlib import Path
+
 
 def main():
     arguments = sys.argv[1:]
@@ -57,16 +59,3 @@ def download_and_run():
 
 if __name__ == "__main__":
     download_and_run()
-
-    APP_PATH = os.path.join(BASE_DIR, "TrynDPI.exe")
-
-    if os.path.exists(APP_PATH):
-        subprocess.Popen(
-            [APP_PATH],
-            shell=True,
-            creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
-        )
-        print("Приложение запущено, скрипт закрывается.")
-        sys.exit(0)
-    else:
-        print(f"Файл {APP_PATH} не найден.")

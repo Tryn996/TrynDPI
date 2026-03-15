@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cp0fxtf7la6b" path="res://script/scens/main.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://d4df0j0pjrrp8" path="res://res/font/font2.ttf" id="2"]
-[ext_resource type="Script" uid="uid://cxdmcj4dwg2pc" path="res://script/load/texture_rect.gd" id="2_85g3d"]
 [ext_resource type="FontFile" uid="uid://bsev51k2h27qx" path="res://res/font/font1.ttf" id="3"]
 [ext_resource type="Script" uid="uid://s6ph88fd3rn" path="res://script/check/checker.gd" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://bphe0xixmxebf" path="res://res/icons/ext512.png" id="4_x33ci"]
@@ -23,11 +22,6 @@ visible = false
 offset_right = 726.0
 offset_bottom = 683.0
 color = Color(0.18431373, 0.18431373, 0.18431373, 0.70980394)
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1277073008]
-offset_right = 726.0
-offset_bottom = 683.0
-script = ExtResource("2_85g3d")
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
 layout_mode = 3

@@ -7,6 +7,7 @@ var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
 var global_time = Time.get_datetime_dict_from_system()
 var global_con = "18"
+
 func read_file(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file:
@@ -16,6 +17,7 @@ func read_file(path):
 	else:
 		print(FileAccess.get_open_error())
 		return ""
+
 func _ready():
 	read_file(OS.get_executable_path().get_base_dir() + "/vers.txt")
 	get_window().borderless = false
@@ -31,6 +33,7 @@ func _ready():
 	if not global_con == Global.const_vers and Global.upavt == 0:
 		OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
 		get_tree().quit()
+		
 func switch_scene(key):
 	for s in scenes.values(): s.hide()
 	scenes[key].show()
@@ -46,6 +49,7 @@ func run_dpi():
 	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TgWsProxy.exe")
 	update_ui(true)
 	start_state = 1
+	
 func stop_dpi():
 	OS.shell_open(path_kill)
 	update_ui(false)

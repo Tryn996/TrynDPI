@@ -24,6 +24,7 @@ offset_bottom = 683.0
 color = Color(0.18431373, 0.18431373, 0.18431373, 0.70980394)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
@@ -144,7 +145,6 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0

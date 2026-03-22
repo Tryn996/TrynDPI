@@ -24,13 +24,12 @@ offset_bottom = 683.0
 color = Color(0.18431373, 0.18431373, 0.18431373, 0.70980394)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
-offset_top = 31.765
+offset_top = 19.385
 offset_right = 30.865
-offset_bottom = 71.76497
+offset_bottom = 59.38495
 script = ExtResource("3_85g3d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Scen1" unique_id=844769153]
@@ -39,9 +38,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 98.785
-offset_top = 225.64
+offset_top = 213.275
 offset_right = 364.7587
-offset_bottom = 323.64032
+offset_bottom = 311.27554
 grow_horizontal = 2
 scale = Vector2(1.9, 1.9)
 
@@ -58,15 +57,19 @@ text = "Выключить"
 layout_mode = 2
 text = "Перезапуск"
 
+[node name="Proxy" type="Button" parent="Scen1/VBoxContainer" unique_id=872940865]
+layout_mode = 2
+text = "Включить proxy"
+
 [node name="Status" type="VBoxContainer" parent="Scen1" unique_id=1447106994]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 288.835
-offset_top = 151.83
+offset_top = 144.4
 offset_right = 336.835
-offset_bottom = 173.83
+offset_bottom = 166.40015
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 
@@ -86,9 +89,9 @@ text = "Вкл"
 [node name="Check" type="VBoxContainer" parent="Scen1" unique_id=1443560696]
 layout_mode = 0
 offset_left = 119.135
-offset_top = 409.23502
+offset_top = 443.41
 offset_right = 624.13495
-offset_bottom = 504.2339
+offset_bottom = 611.4116
 
 [node name="YouTube" type="Button" parent="Scen1/Check" unique_id=2123488312]
 layout_mode = 2
@@ -128,9 +131,9 @@ text = "Tr   yn Dpi"
 [node name="Label" type="Label" parent="Scen1" unique_id=199990480]
 layout_mode = 0
 offset_left = 119.135
-offset_top = 360.235
+offset_top = 403.53
 offset_right = 621.1349
-offset_bottom = 403.235
+offset_bottom = 446.53
 theme_override_font_sizes/font_size = 22
 text = "Статус приложений"
 horizontal_alignment = 1
@@ -145,6 +148,7 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0

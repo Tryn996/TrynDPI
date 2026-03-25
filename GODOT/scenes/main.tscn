@@ -59,7 +59,8 @@ text = "Перезапуск"
 
 [node name="Proxy" type="Button" parent="Scen1/VBoxContainer" unique_id=872940865]
 layout_mode = 2
-text = "Включить proxy"
+tooltip_text = "Подбирает подходящий для вас прокси для Telegram Desktop"
+text = "Подобрать тг proxy"
 
 [node name="Status" type="VBoxContainer" parent="Scen1" unique_id=1447106994]
 layout_mode = 1

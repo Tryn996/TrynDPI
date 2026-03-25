@@ -30,7 +30,7 @@ func _ready():
 	$Scen1/VBoxContainer/Restart.pressed.connect(restart_dpi)
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
-	$Scen1/VBoxContainer/Proxy.pressed.connect(func():OS.shell_open("tg://proxy?server=love.funstat.info&port=853&secret=ee26ca1d1b79910d1d2b9a55fb2479f5e6646e732e676f6f676c65"))
+	$Scen1/VBoxContainer/Proxy.pressed.connect(func():OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe"))
 	if not global_con == Global.const_vers and Global.upavt == 0:
 		OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
 		get_tree().quit()
@@ -47,7 +47,6 @@ func update_ui(is_running: bool):
 
 func run_dpi():
 	OS.shell_open(Global.path)
-	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TgWsProxy.exe")
 	update_ui(true)
 	start_state = 1
 	
@@ -61,7 +60,6 @@ func restart_dpi():
 	update_ui(false)
 	await get_tree().create_timer(1.5).timeout
 	OS.shell_open(Global.path)
-	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TgWsProxy.exe")
 	update_ui(true)
 	start_state = 1
 

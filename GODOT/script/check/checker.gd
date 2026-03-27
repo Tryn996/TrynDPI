@@ -2,13 +2,11 @@ extends Control
 
 var statuses = {
 	"Discord": "Обновление...",
-	"Telegram": "Обновление...",
 	"YouTube": "Обновление..."
 }
 
 func _ready():
 	check_website_status("https://discord.com", "Discord")
-	check_website_status("https://telegram.org", "Telegram")
 	check_website_status("https://youtube.com", "YouTube")
 func check_website_status(url: String, service_name: String):
 	var http_request = HTTPRequest.new()
@@ -35,17 +33,13 @@ func update_ui(service_name: String, status_text: String):
 	match service_name:
 		"Discord":
 			$Check/Discord.text = "Discord: " + status_text
-		"Telegram":
-			$Check/Telegram.text = "Telegram: " + status_text
 		"YouTube":
 			$Check/YouTube.text = "YouTube: " + status_text
 	
 
 func _on_updeate_pressed():
 	$Check/Discord.text = "Discord: Обновление..."
-	$Check/Telegram.text = "Telegram: Обновление..."
 	$Check/YouTube.text = "YouTube: Обновление..."
 	
 	check_website_status("https://discord.com", "Discord")
-	check_website_status("https://telegram.org", "Telegram")
 	check_website_status("https://youtube.com", "YouTube") 

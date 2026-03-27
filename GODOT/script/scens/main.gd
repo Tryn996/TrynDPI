@@ -12,7 +12,6 @@ func read_file(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file:
 		global_con = file.get_as_text()
-		print(global_con)
 		return global_con
 	else:
 		print(FileAccess.get_open_error())
@@ -32,8 +31,8 @@ func _ready():
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$Scen1/VBoxContainer/Proxy.pressed.connect(func():OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe"))
 	if not global_con == Global.const_vers and Global.upavt == 0:
-		OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
-		get_tree().quit()
+		Global.test = 1
+		get_tree().change_scene_to_file("res://scenes/loading.tscn")
 		
 func switch_scene(key):
 	for s in scenes.values(): s.hide()

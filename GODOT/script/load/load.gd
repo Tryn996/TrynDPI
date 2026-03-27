@@ -22,7 +22,7 @@ func load_game():
 	Global.upavt = file.get_var(Global.upavt)
 func _ready():
 	load_game()
-	print(str("S",Global.setting_start,"A",Global.avtoload,"T",Global.transp,"U",Global.upavt))
+	print(str("Setting_start: ",Global.setting_start," Avtoload: ",Global.avtoload," Transp: ",Global.transp," Upavt: ",Global.upavt))
 	if Global.transp == 1:
 		$"../Scen2/VBoxContainer/tra_on".hide()
 		$"../Scen2/VBoxContainer/tra_off".show()

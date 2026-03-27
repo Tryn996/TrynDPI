@@ -24,12 +24,13 @@ offset_bottom = 683.0
 color = Color(0.18431373, 0.18431373, 0.18431373, 0.70980394)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -9.135
-offset_top = 19.385
+offset_top = 42.975
 offset_right = 30.865
-offset_bottom = 59.38495
+offset_bottom = 82.974915
 script = ExtResource("3_85g3d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Scen1" unique_id=844769153]
@@ -104,11 +105,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Discord: Обновление..."
 
-[node name="Telegram" type="Button" parent="Scen1/Check" unique_id=303171600]
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Telegram: Обновление..."
-
 [node name="Updeate" type="Button" parent="Scen1/Check" unique_id=1800209947]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
@@ -149,7 +145,6 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -15.0
@@ -316,7 +311,7 @@ flat = true
 
 [node name="Status" type="Button" parent="." unique_id=1543814129]
 offset_left = 0.088858485
-offset_right = 338.14114
+offset_right = 321.06073
 offset_bottom = 32.999996
 rotation = -6.28319
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)

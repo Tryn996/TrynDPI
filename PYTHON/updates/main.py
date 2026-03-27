@@ -3,21 +3,7 @@ import sys
 import requests
 import subprocess
 from lastversion import lastversion
-from pathlib import Path
 
-
-def main():
-    arguments = sys.argv[1:]
-
-    if "--vers" in arguments:
-        print("Запуск в режиме администратора")
-
-    if len(arguments) > 0:
-        vers = "v" + str(lastversion.latest("Tryn996/TrynDPI"))
-        with open("vers.txt", "w", encoding="utf-8") as file:
-            file.write(vers)
-    else:
-        download_and_run()
 
 
 def get_base_path():
@@ -51,10 +37,10 @@ def download_and_run():
                     f.write(chunk)
             print("OK download")
         print("OK setup")
-        subprocess.run(FULL_PATH,shell=True)
-
+        subprocess.run(FULL_PATH)
+        sys.exit()
     except Exception as e:
-        print(f"Ошибка: {e}")
+        print(f"ERR: {e}")
 
 
 if __name__ == "__main__":

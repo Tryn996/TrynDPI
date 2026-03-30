@@ -19,8 +19,8 @@ func read_file(path):
 
 func _ready():
 	read_file(OS.get_executable_path().get_base_dir() + "/vers.txt")
-	get_window().borderless = false
-	get_window().size = Vector2i(720, 680)
+	get_window().borderless = false 
+	get_window().size = Vector2i(780, 680)
 	switch_scene("main")
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
@@ -30,6 +30,9 @@ func _ready():
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$Scen1/VBoxContainer/Proxy.pressed.connect(func():OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe"))
+	if is_winws_running() == true:
+		$Scen1/VBoxContainer/Start.hide()
+		$Scen1/VBoxContainer/Quit.show()
 	if not global_con == Global.const_vers and Global.upavt == 0:
 		Global.test = 1
 		get_tree().change_scene_to_file("res://scenes/loading.tscn")
@@ -66,3 +69,11 @@ func _process(_delta):
 	if Global.start == 1:
 		Global.start = 0
 		run_dpi()
+
+func is_winws_running() -> bool:
+	var output = []
+	OS.execute("tasklist", ["/NH", "/FI", "IMAGENAME eq winws.exe"], output, true)
+	
+	if output.size() > 0:
+		return output[0].contains("winws.exe")
+	return false

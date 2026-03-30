@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="TrynDPI"
-config/version="3.9.2"
+config/version="4.0"
 run/main_scene="uid://dlaa86cox4frw"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="TrynDPI"
@@ -68,7 +68,7 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.158472, 0.158472, 0.158472, 1)
+environment/defaults/default_clear_color=Color(0.12591091, 0.12591082, 0.12591082, 1)
 viewport/transparent_background=true
 
 [steam]

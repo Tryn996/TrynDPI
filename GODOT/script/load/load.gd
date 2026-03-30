@@ -9,7 +9,6 @@ extends Node
 @onready var LOn = $"../Scen1/Status/On"
 @onready var LOff = $"../Scen1/Status/Off"
 
-var path_kill = (OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat")
 var save_path = "user://save.save"
 var start = 0
 var path = Global.path

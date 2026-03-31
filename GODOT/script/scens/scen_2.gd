@@ -6,6 +6,7 @@ extends Control
 
 var base_dir = OS.get_executable_path().get_base_dir()
 var save_path = "user://save.save"
+var new_save = "user://save_backup.save"
 
 func _ready():
 	setup_toggle($VBoxContainer/Auto_on, $VBoxContainer/Auto_off, "setting_start", 1, 0)
@@ -19,6 +20,13 @@ func _ready():
 	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
 	$VBoxContainer/del_up.pressed.connect(func():OS.move_to_trash(base_dir + "/data/updates/vers"))
+	$VBoxContainer/cup.pressed.connect(func():
+		DirAccess.rename_absolute(save_path, new_save)
+		save()
+		OS.alert("Настройки сохранены в " + OS.get_data_dir() + "/TrynDPI"))
+	$VBoxContainer/debuger.pressed.connect(func():
+		OS.shell_open(base_dir + "/TrynDPI.console.exe")
+		get_tree().quit())
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
 	var update_ui = func():
 		var is_on = Global.get(global_var) == val_on

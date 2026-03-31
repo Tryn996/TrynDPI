@@ -123,7 +123,7 @@ grow_horizontal = 2
 scale = Vector2(0.82, 0.82)
 theme_override_fonts/font = ExtResource("3")
 theme_override_font_sizes/font_size = 136
-text = "Tr   yn Dpi"
+text = "Tr   ynDPI"
 
 [node name="Label" type="Label" parent="Scen1" unique_id=199990480]
 layout_mode = 0
@@ -137,9 +137,9 @@ horizontal_alignment = 1
 
 [node name="LogoImg" type="TextureButton" parent="Scen1" unique_id=866768788]
 layout_mode = 0
-offset_left = 242.13498
+offset_left = 242.75
 offset_top = 32.235
-offset_right = 754.135
+offset_right = 754.75
 offset_bottom = 544.235
 scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
@@ -255,6 +255,14 @@ text = "Удалить TrynDPI"
 [node name="del_up" type="Button" parent="Scen2/VBoxContainer" unique_id=504126310]
 layout_mode = 2
 text = "Удалить файлы обновлений"
+
+[node name="cup" type="Button" parent="Scen2/VBoxContainer" unique_id=1672054248]
+layout_mode = 2
+text = "Сделать копию настроек"
+
+[node name="debuger" type="Button" parent="Scen2/VBoxContainer" unique_id=1418888180]
+layout_mode = 2
+text = "Перезапустить в режиме разработчика"
 
 [node name="Del" type="Control" parent="." unique_id=66849279]
 visible = false

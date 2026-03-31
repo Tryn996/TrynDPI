@@ -20,27 +20,20 @@ def download_and_run():
     vers = "v" + str(lastversion.latest("Tryn996/TrynDPI"))
     FILE_NAME = f"TrynDPIupdeate{vers}.exe"
     FULL_PATH = os.path.join(FOLDER_NAME, FILE_NAME)
-    try:
-        url = f"https://github.com/Tryn996/TrynDPI/releases/download/{vers}/TrynDPI.exe"
-        if os.path.exists(FULL_PATH):
-            print(f"Файл {FILE_NAME} уже существует. Пропускаю скачивание.")
-        else:
-            print(f"Загрузка: {url}")
-            if not os.path.exists(FOLDER_NAME):
-                os.makedirs(FOLDER_NAME)
+    url = f"https://github.com/Tryn996/TrynDPI/releases/download/{vers}/TrynDPI.exe"
+    if os.path.exists(FULL_PATH):
+        pass
+    else:
+        if not os.path.exists(FOLDER_NAME):
+            os.makedirs(FOLDER_NAME)
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
 
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
-
-            with open(FULL_PATH, "wb") as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    f.write(chunk)
-            print("OK download")
-        print("OK setup")
+        with open(FULL_PATH, "wb") as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
         subprocess.run(FULL_PATH)
         sys.exit()
-    except Exception as e:
-        print(f"ERR: {e}")
 
 
 if __name__ == "__main__":

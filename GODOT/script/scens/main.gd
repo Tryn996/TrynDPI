@@ -14,14 +14,26 @@ func read_file(path):
 		global_con = file.get_as_text()
 		return global_con
 	else:
-		print(FileAccess.get_open_error())
 		return ""
-
+func all_print():
+	print(is_winws_running())
+	print(global_con)
+	print(get_window().size)
+	print(global_time)
+	print(scenes)
+	print(status_labels)
+	print(main_buttons)
+	print(path_kill)
+	print(OS.get_executable_path().get_base_dir())
+	print(OS.get_executable_path().get_base_dir() + "/vers.txt")
+	print(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
+	print(OS.get_data_dir() + "/TrynDPI")
 func _ready():
 	read_file(OS.get_executable_path().get_base_dir() + "/vers.txt")
 	get_window().borderless = false 
 	get_window().size = Vector2i(780, 680)
 	switch_scene("main")
+	all_print()
 	OS.low_processor_usage_mode = true
 	$Vers.text = Global.vers
 	main_buttons.start.pressed.connect(run_dpi)

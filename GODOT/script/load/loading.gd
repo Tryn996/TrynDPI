@@ -10,6 +10,7 @@ func _ready() -> void:
 		start()
 	
 func updeate():
+	$ProgressBar.show()
 	get_window().borderless = true
 	get_window().size = Vector2i(450, 450)
 	anim.play("new_updeate")

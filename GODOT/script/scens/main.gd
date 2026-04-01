@@ -42,12 +42,13 @@ func _ready():
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
 	$Scen1/VBoxContainer/Proxy.pressed.connect(func():OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe"))
+	$Scen1/VBoxContainer/Tor.pressed.connect(func():OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/browser/firefox.exe"))
 	if is_winws_running() == true:
 		$Scen1/VBoxContainer/Start.hide()
 		$Scen1/VBoxContainer/Quit.show()
 	if not global_con == Global.const_vers and Global.upavt == 0:
 		Global.test = 1
-		get_tree().change_scene_to_file("res://scenes/loading.tscn")
+		#get_tree().change_scene_to_file("res://scenes/loading.tscn")
 		
 func switch_scene(key):
 	for s in scenes.values(): s.hide()

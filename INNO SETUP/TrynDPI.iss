@@ -1,5 +1,5 @@
 #define MyAppName "TrynDPI"
-#define MyAppVersion "4.1"
+#define MyAppVersion "4.2"
 #define MyAppPublisher "Tryn"
 #define MyAppURL "https://t.me/tryndpi"
 #define MyAppExeName "TrynDPI.exe"

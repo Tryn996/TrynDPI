@@ -27,6 +27,7 @@ func _ready():
 	$VBoxContainer/debuger.pressed.connect(func():
 		OS.shell_open(base_dir + "/TrynDPI.console.exe")
 		get_tree().quit())
+	$VBoxContainer/logs.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI/logs/godot.log"))
 func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat_off = ""):
 	var update_ui = func():
 		var is_on = Global.get(global_var) == val_on

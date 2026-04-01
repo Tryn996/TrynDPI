@@ -28,9 +28,9 @@ visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 33.61
-offset_top = 42.975
+offset_top = 62.035
 offset_right = 73.61006
-offset_bottom = 82.974915
+offset_bottom = 102.03489
 script = ExtResource("3_85g3d")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Scen1" unique_id=844769153]
@@ -38,10 +38,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 98.785
-offset_top = 213.275
-offset_right = 364.7587
-offset_bottom = 311.27554
+offset_left = 98.78497
+offset_top = 147.975
+offset_right = 364.75867
+offset_bottom = 279.975
 grow_horizontal = 2
 scale = Vector2(1.9, 1.9)
 
@@ -63,15 +63,19 @@ layout_mode = 2
 tooltip_text = "Подбирает подходящий для вас прокси для Telegram Desktop"
 text = "Подобрать тг proxy"
 
+[node name="Tor" type="Button" parent="Scen1/VBoxContainer" unique_id=389437097]
+layout_mode = 2
+text = "Открыть Tor"
+
 [node name="Status" type="VBoxContainer" parent="Scen1" unique_id=1447106994]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 288.835
-offset_top = 144.4
-offset_right = 336.835
-offset_bottom = 166.40015
+offset_left = 288.83496
+offset_top = 81.595
+offset_right = 336.83496
+offset_bottom = 103.59517
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 
@@ -115,10 +119,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 148.135
-offset_top = 28.235
+offset_left = 148.13496
+offset_top = -33.645
 offset_right = 640.135
-offset_bottom = 165.235
+offset_bottom = 103.354996
 grow_horizontal = 2
 scale = Vector2(0.82, 0.82)
 theme_override_fonts/font = ExtResource("3")
@@ -138,9 +142,9 @@ horizontal_alignment = 1
 [node name="LogoImg" type="TextureButton" parent="Scen1" unique_id=866768788]
 layout_mode = 0
 offset_left = 242.75
-offset_top = 32.235
+offset_top = -30.725
 offset_right = 754.75
-offset_bottom = 544.235
+offset_bottom = 481.275
 scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
@@ -242,6 +246,10 @@ text = "Открыть листы"
 [node name="Bat" type="Button" parent="Scen2/VBoxContainer" unique_id=1896318409]
 layout_mode = 2
 text = "Открыть AppData"
+
+[node name="logs" type="Button" parent="Scen2/VBoxContainer" unique_id=371796737]
+layout_mode = 2
+text = "Открыть логи"
 
 [node name="Label2" type="Label" parent="Scen2/VBoxContainer" unique_id=81991486]
 layout_mode = 2

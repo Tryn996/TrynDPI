@@ -24,7 +24,6 @@ offset_bottom = 683.0
 color = Color(0.14767182, 0.14767182, 0.14767176, 0.70980394)
 
 [node name="Scen1" type="Control" parent="." unique_id=555728920]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 33.61
@@ -60,12 +59,9 @@ text = "Перезапуск"
 
 [node name="Proxy" type="Button" parent="Scen1/VBoxContainer" unique_id=872940865]
 layout_mode = 2
-tooltip_text = "Подбирает подходящий для вас прокси для Telegram Desktop"
-text = "Подобрать тг proxy"
-
-[node name="Tor" type="Button" parent="Scen1/VBoxContainer" unique_id=389437097]
-layout_mode = 2
-text = "Открыть Tor"
+tooltip_text = "Открывает приложение для обхода блокировок Telegram Desktop.
+Вы можете управлять прокси из трея"
+text = "Открыть тг proxy "
 
 [node name="Status" type="VBoxContainer" parent="Scen1" unique_id=1447106994]
 layout_mode = 1
@@ -94,10 +90,10 @@ text = "Вкл"
 
 [node name="Check" type="VBoxContainer" parent="Scen1" unique_id=1443560696]
 layout_mode = 0
-offset_left = 119.135
-offset_top = 443.41
-offset_right = 624.13495
-offset_bottom = 611.4116
+offset_left = 119.39001
+offset_top = 385.965
+offset_right = 624.38995
+offset_bottom = 553.9666
 
 [node name="YouTube" type="Button" parent="Scen1/Check" unique_id=2123488312]
 layout_mode = 2
@@ -131,10 +127,10 @@ text = "Tr   ynDPI"
 
 [node name="Label" type="Label" parent="Scen1" unique_id=199990480]
 layout_mode = 0
-offset_left = 119.135
-offset_top = 403.53
-offset_right = 621.1349
-offset_bottom = 446.53
+offset_left = 119.39001
+offset_top = 342.965
+offset_right = 621.3899
+offset_bottom = 385.965
 theme_override_font_sizes/font_size = 22
 text = "Статус приложений"
 horizontal_alignment = 1
@@ -149,6 +145,7 @@ scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 36.29

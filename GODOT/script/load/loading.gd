@@ -10,12 +10,11 @@ func _ready() -> void:
 		start()
 	
 func updeate():
-	$ProgressBar.show()
 	get_window().borderless = true
 	get_window().size = Vector2i(450, 450)
 	anim.play("new_updeate")
 	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/updates/main.exe")
-	await get_tree().create_timer(15).timeout
+	await get_tree().create_timer(16).timeout
 	get_tree().quit()
 
 func start():

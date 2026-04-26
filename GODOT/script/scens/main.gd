@@ -5,7 +5,6 @@ extends CanvasLayer
 
 var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
-var global_time = Time.get_datetime_dict_from_system()
 var global_con = "18"
 
 func read_file(path):
@@ -19,7 +18,6 @@ func all_print():
 	print(is_winws_running())
 	print(global_con)
 	print(get_window().size)
-	print(global_time)
 	print(scenes)
 	print(status_labels)
 	print(main_buttons)
@@ -29,6 +27,11 @@ func all_print():
 	print(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
 	print(OS.get_data_dir() + "/TrynDPI")
 func _ready():
+	var exe_path = (OS.get_executable_path().get_base_dir() + "/unins000.exe")
+	if FileAccess.file_exists(exe_path):
+		pass
+	else:
+		$Scen2/VBoxContainer/del.hide()
 	read_file(OS.get_executable_path().get_base_dir() + "/vers.txt")
 	get_window().borderless = false 
 	get_window().size = Vector2i(780, 680)
@@ -48,7 +51,8 @@ func _ready():
 	if not global_con == Global.const_vers and Global.upavt == 0:
 		Global.test = 1
 		get_tree().change_scene_to_file("res://scenes/loading.tscn")
-		
+	else:
+		OS.move_to_trash(OS.get_executable_path().get_base_dir() + "/data/updates/vers")
 func switch_scene(key):
 	for s in scenes.values(): s.hide()
 	scenes[key].show()

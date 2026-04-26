@@ -19,7 +19,6 @@ func _ready():
 	$VBoxContainer/Lists.pressed.connect(func(): OS.shell_open(base_dir + "/data/lists/list-general.txt"))
 	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
-	$VBoxContainer/del_up.pressed.connect(func():OS.move_to_trash(base_dir + "/data/updates/vers"))
 	$VBoxContainer/cup.pressed.connect(func():
 		OS.shell_open(base_dir + "/data/updates/updeate.exe")
 		await get_tree().create_timer(5).timeout

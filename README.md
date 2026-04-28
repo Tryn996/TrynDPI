@@ -15,13 +15,3 @@ TrynDPI is a content filtering tool, also known as a DPI application. The key be
 
 Documentation Here
 
-## Distribute
-
-- [Service Name](Page Link)
-
-
-## Developers
-
-- [Delevoper Name](GitHub Profile Link)
-
-## License

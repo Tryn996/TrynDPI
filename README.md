@@ -9,7 +9,7 @@
 
 ## About
 
-About Text Here
+TrynDPI is a content filtering tool, also known as a DPI application. The key benefits of this app include its user-friendly configuration and extensive functionality.
 
 ## Documentation
 

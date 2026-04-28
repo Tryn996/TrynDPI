@@ -3,9 +3,8 @@
 </p>
 
 <p align="center">
-   <img src="" alt="Unity Version">
-   <img src="" alt="Game Version">
-   <img src="" alt="License">
+   <img src="" alt="Latest Release">
+   <img src="" alt="Code">
 </p>
 
 ## About

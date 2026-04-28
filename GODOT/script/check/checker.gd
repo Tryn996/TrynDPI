@@ -1,8 +1,8 @@
 extends Control
 
 var statuses = {
-	"Discord": "Обновление...",
-	"YouTube": "Обновление..."
+	"Discord": "L_UP",
+	"YouTube": "L_UP"
 }
 
 func _ready():
@@ -19,13 +19,16 @@ func check_website_status(url: String, service_name: String):
 	
 	var error = http_request.request(url, [], HTTPClient.METHOD_HEAD)
 	if error != OK:
-		update_ui(service_name, "Ошибка сети")
+		update_ui(service_name, "L_ERR")
 
 func _on_request_completed(result, response_code, service_name, request_node):
 	if result == HTTPRequest.RESULT_SUCCESS and response_code == 200:
-		update_ui(service_name, "Доступен")
+		if OS.get_locale_language() == "ru":
+			update_ui(service_name, "Доступен")
+		else:
+			update_ui(service_name, "Avaible")
 	else:
-		update_ui(service_name, "Недоступен")
+		update_ui(service_name, "L_UNAVAIL")
 	request_node.queue_free()
 	
 func update_ui(service_name: String, status_text: String):
@@ -38,8 +41,8 @@ func update_ui(service_name: String, status_text: String):
 	
 
 func _on_updeate_pressed():
-	$Check/Discord.text = "Discord: Обновление..."
-	$Check/YouTube.text = "YouTube: Обновление..."
+	$Check/Discord.text = "B_DISCORD"
+	$Check/YouTube.text = "B_YOUTUBE"
 	
 	check_website_status("https://discord.com", "Discord")
 	check_website_status("https://youtube.com", "YouTube") 

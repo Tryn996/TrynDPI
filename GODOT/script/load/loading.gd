@@ -4,6 +4,10 @@ extends CanvasLayer
 var save_path = "user://save.save"
 
 func _ready() -> void:
+	if OS.get_locale_language() == "ru":
+		pass
+	else:
+		$Label.position = Vector2(170,316)
 	if Global.test == 1:
 		updeate()
 	if Global.test == 0:

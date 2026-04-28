@@ -57,6 +57,10 @@ enabled=PackedStringArray()
 
 theme/custom="res://res/themes/main.tres"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://res/font/Text.en.translation", "res://res/font/Text.ru.translation")
+
 [physics]
 
 2d/run_on_separate_thread=true

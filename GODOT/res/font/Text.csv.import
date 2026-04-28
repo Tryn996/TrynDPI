@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dkic66at3oyi2"
+
+[deps]
+
+files=["res://res/font/Text.en.translation", "res://res/font/Text.ru.translation"]
+
+source_file="res://res/font/Text.csv"
+dest_files=["res://res/font/Text.en.translation", "res://res/font/Text.ru.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,38 @@
+id,en,ru
+B_YOUTUBE,YouTube: Update…,YouTube: Обновление…
+B_DISCORD,Discord: Update...,Discord: Обновление
+B_UPDATE,Update,Обновить
+BUT_START,Start,Старт
+BUT_RESTART,Restart,Перезапуск
+BUT_QUIT,Disable,Выключить
+L_STATUS,Status programs,Статус приложений
+B_STATUS,Status,Статус
+B_OPTIONS,Options,Настройки
+L_OFF,Off,Выкл
+L_ON,On,Вкл
+L_212,Available,Доступен
+L_ERR,Network error,Ошибка сети
+L_UNAVAIL,Unavailable,Недоступен
+L_UP,Update…,Обновление…
+L_1,Automatically start a crawl when logging into the app,Автоматически запускать обход при в ходе в приложение
+L_2,Open a bypass at system startup,Открывать обход при запуске системы
+L_3,Transparent application window,Прозрачное окно приложения
+L_4,Auto update,Авто обновление
+L_5,Developer Functions,Функции разработчика
+B_1,Open the root folder,Открыть корневую папку
+B_2,Open lists,Открыть листы
+B_3,Open AppData,Открыть AppData
+B_4,Open logs,Открыть логи
+L_6,Interaction with the application,Взаимодействие с приложением
+B_5,Delete TrynDPI,Удалить TrynDPI
+B_6,Update the app,Обновить приложение
+B_7,Restart in Developer mode,Перезапустить в режиме разработчика
+LO_1,Loading.,Загрузка.
+LO_2,Loading..,Загрузка..
+LO_3,Loading…,Загрузка…
+UP_1,Update.,Обновление.
+UP_2,Update..,Обновление..
+UP_3,Update…,Обновление…
+L_DEL,Deletion method,Способ удаление
+L_COM,General,Обычный
+L_FULL,Complete (deleting all settings),Полное (удаление всех настроек)

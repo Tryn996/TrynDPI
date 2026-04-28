@@ -13,8 +13,10 @@
 script = ExtResource("1")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=377914566]
-offset_right = 1158.0
-offset_bottom = 685.0
+offset_left = -2.0
+offset_top = 10.0
+offset_right = 1156.0
+offset_bottom = 695.0
 color = Color(0.1254902, 0.1254902, 0.1254902, 1)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1128509315]
@@ -39,30 +41,24 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 98.78497
-offset_top = 147.975
+offset_top = 184.41
 offset_right = 364.75867
-offset_bottom = 279.975
+offset_bottom = 316.41003
 grow_horizontal = 2
 scale = Vector2(1.9, 1.9)
 
 [node name="Start" type="Button" parent="Scen1/VBoxContainer" unique_id=1618613237]
 layout_mode = 2
-text = "Старт"
+text = "BUT_START"
 
 [node name="Quit" type="Button" parent="Scen1/VBoxContainer" unique_id=181684279]
 visible = false
 layout_mode = 2
-text = "Выключить"
+text = "BUT_QUIT"
 
 [node name="Restart" type="Button" parent="Scen1/VBoxContainer" unique_id=958534262]
 layout_mode = 2
-text = "Перезапуск"
-
-[node name="Proxy" type="Button" parent="Scen1/VBoxContainer" unique_id=872940865]
-layout_mode = 2
-tooltip_text = "Открывает приложение для обхода блокировок Telegram Desktop.
-Вы можете управлять прокси из трея"
-text = "Открыть тг proxy "
+text = "BUT_RESTART"
 
 [node name="Status" type="VBoxContainer" parent="Scen1" unique_id=1447106994]
 layout_mode = 1
@@ -70,9 +66,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 288.83496
-offset_top = 81.595
+offset_top = 114.855
 offset_right = 336.83496
-offset_bottom = 103.59517
+offset_bottom = 136.85516
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 
@@ -80,46 +76,46 @@ scale = Vector2(2.5, 2.5)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2")
-text = "Выкл"
+text = "L_OFF"
 
 [node name="On" type="Label" parent="Scen1/Status" unique_id=1624981222]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2")
-text = "Вкл"
+text = "L_ON"
 
 [node name="Check" type="VBoxContainer" parent="Scen1" unique_id=1443560696]
 layout_mode = 0
-offset_left = 119.39001
-offset_top = 385.965
-offset_right = 624.38995
-offset_bottom = 553.9666
+offset_left = 120.39001
+offset_top = 363.965
+offset_right = 625.38995
+offset_bottom = 531.9666
 
 [node name="YouTube" type="Button" parent="Scen1/Check" unique_id=2123488312]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "YouTube: Обновление..."
+text = "B_YOUTUBE"
 
 [node name="Discord" type="Button" parent="Scen1/Check" unique_id=2000858467]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Discord: Обновление..."
+text = "B_DISCORD"
 
 [node name="Updeate" type="Button" parent="Scen1/Check" unique_id=1800209947]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Обновить"
+text = "B_UPDATE"
 
 [node name="Logo" type="Label" parent="Scen1" unique_id=1892495408]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 148.13496
-offset_top = -33.645
-offset_right = 640.135
-offset_bottom = 103.354996
+offset_left = 146.38997
+offset_top = -21.035
+offset_right = 638.39
+offset_bottom = 115.965
 grow_horizontal = 2
 scale = Vector2(0.82, 0.82)
 theme_override_fonts/font = ExtResource("3")
@@ -128,24 +124,25 @@ text = "Tr   ynDPI"
 
 [node name="Label" type="Label" parent="Scen1" unique_id=199990480]
 layout_mode = 0
-offset_left = 119.39001
-offset_top = 342.965
-offset_right = 621.3899
-offset_bottom = 385.965
+offset_left = 120.39
+offset_top = 317.62
+offset_right = 622.3899
+offset_bottom = 360.62
 theme_override_font_sizes/font_size = 22
-text = "Статус приложений"
+text = "L_STATUS"
 horizontal_alignment = 1
 
 [node name="LogoImg" type="TextureButton" parent="Scen1" unique_id=866768788]
 layout_mode = 0
-offset_left = 242.75
-offset_top = -30.725
-offset_right = 754.75
-offset_bottom = 481.275
+offset_left = 242.39001
+offset_top = -17.034998
+offset_right = 754.39
+offset_bottom = 494.965
 scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("4_x33ci")
 
 [node name="Scen2" type="Control" parent="." unique_id=1760535548]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 36.29
@@ -165,108 +162,95 @@ scale = Vector2(0.95, 0.95)
 [node name="Text1" type="Label" parent="Scen2/VBoxContainer" unique_id=1798596075]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2")
-text = "Автоматически запускать обход при в ходе в приложение"
+text = "L_1"
 
 [node name="Auto_on" type="Button" parent="Scen2/VBoxContainer" unique_id=383562392]
 layout_mode = 2
-tooltip_text = "Когда запускается программа 
-сразу же запускается обход"
 theme_override_fonts/font = ExtResource("2")
-text = "Выкл"
+text = "L_OFF"
 
 [node name="Auto_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1392311930]
 visible = false
 layout_mode = 2
-tooltip_text = "Когда запускается программа 
-сразу же запускается обход"
 theme_override_fonts/font = ExtResource("2")
-text = "Вкл"
+text = "L_ON"
 
 [node name="Text3" type="Label" parent="Scen2/VBoxContainer" unique_id=781929205]
 layout_mode = 2
-text = "Открывать обход при запуске системы"
+text = "L_2"
 
 [node name="Auto_open_on" type="Button" parent="Scen2/VBoxContainer" unique_id=575437555]
 layout_mode = 2
-tooltip_text = "Когда запускается Windows сразу же 
-запускается обход"
-text = "Выкл"
+text = "L_OFF"
 
 [node name="Auto_open_off" type="Button" parent="Scen2/VBoxContainer" unique_id=672058410]
 visible = false
 layout_mode = 2
-tooltip_text = "Когда запускается Windows сразу же 
-запускается обход"
-text = "Вкл"
+text = "L_ON"
 
 [node name="Label3" type="Label" parent="Scen2/VBoxContainer" unique_id=708686396]
 layout_mode = 2
-text = "Прозрачное окно приложения"
+text = "L_3"
 
 [node name="tra_on" type="Button" parent="Scen2/VBoxContainer" unique_id=56520673]
 visible = false
 layout_mode = 2
-tooltip_text = "Делает окно приложение полупрозрачным"
-text = "Выкл"
+text = "L_OFF"
 
 [node name="tra_off" type="Button" parent="Scen2/VBoxContainer" unique_id=980916286]
 layout_mode = 2
-tooltip_text = "Делает окно приложение полупрозрачным"
-text = "Вкл"
+text = "L_ON"
 
 [node name="Label4" type="Label" parent="Scen2/VBoxContainer" unique_id=578821868]
 layout_mode = 2
-text = "Авто обновление"
+text = "L_4"
 
 [node name="upavt_on" type="Button" parent="Scen2/VBoxContainer" unique_id=753640135]
 layout_mode = 2
-text = "Вкл"
+text = "L_ON"
 
 [node name="upavt_off" type="Button" parent="Scen2/VBoxContainer" unique_id=1832515482]
 visible = false
 layout_mode = 2
-text = "Выкл"
+text = "L_OFF"
 
 [node name="Label" type="Label" parent="Scen2/VBoxContainer" unique_id=29915071]
 layout_mode = 2
-text = "Функции разработчика"
+text = "L_5"
 
 [node name="Corn" type="Button" parent="Scen2/VBoxContainer" unique_id=2042733915]
 layout_mode = 2
-text = "Открыть корневую папку"
+text = "B_1"
 
 [node name="Lists" type="Button" parent="Scen2/VBoxContainer" unique_id=771445599]
 layout_mode = 2
-tooltip_text = "Открывает txt файл со всеми сайтами которыми будет обходить TrynDPI"
-text = "Открыть листы"
+text = "B_2"
 
 [node name="Bat" type="Button" parent="Scen2/VBoxContainer" unique_id=1896318409]
 layout_mode = 2
-text = "Открыть AppData"
+text = "B_3"
 
 [node name="logs" type="Button" parent="Scen2/VBoxContainer" unique_id=371796737]
 layout_mode = 2
-text = "Открыть логи"
+text = "B_4"
 
 [node name="Label2" type="Label" parent="Scen2/VBoxContainer" unique_id=81991486]
 layout_mode = 2
-text = "Взаимодействие с приложением"
+text = "L_6"
 
 [node name="del" type="Button" parent="Scen2/VBoxContainer" unique_id=1838988368]
 layout_mode = 2
-tooltip_text = "Удаляет TrynDPI с выбранным способом удалением"
-text = "Удалить TrynDPI"
+text = "B_5"
 
 [node name="cup" type="Button" parent="Scen2/VBoxContainer" unique_id=1672054248]
 layout_mode = 2
-text = "Обновить приложение"
+text = "B_6"
 
 [node name="debuger" type="Button" parent="Scen2/VBoxContainer" unique_id=1418888180]
 layout_mode = 2
-text = "Перезапустить в режиме разработчика"
+text = "B_7"
 
 [node name="Del" type="Control" parent="." unique_id=66849279]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 160.5
@@ -282,9 +266,9 @@ offset_top = 232.0
 offset_right = 437.0
 offset_bottom = 262.0
 item_count = 2
-popup/item_0/text = "Обычное"
+popup/item_0/text = "L_COM"
 popup/item_0/id = 0
-popup/item_1/text = "Полное (удаление всех настроек)"
+popup/item_1/text = "L_FULL"
 popup/item_1/id = 1
 
 [node name="Label" type="Label" parent="Del" unique_id=230453959]
@@ -293,7 +277,7 @@ offset_left = 163.0
 offset_top = 206.0
 offset_right = 338.0
 offset_bottom = 228.0
-text = "Способ удаления"
+text = "L_DEL"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Del" unique_id=148490756]
 title = "Подтверждение"
@@ -317,7 +301,7 @@ offset_right = 388.0
 offset_bottom = 747.2133
 rotation = -1.5707964
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
-text = "Параметры"
+text = "B_OPTIONS"
 flat = true
 
 [node name="Status" type="Button" parent="." unique_id=1543814129]
@@ -326,13 +310,13 @@ offset_right = 320.97186
 offset_bottom = 358.93777
 rotation = -1.5707964
 theme_override_colors/font_hover_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
-text = "Статус"
+text = "B_STATUS"
 flat = true
 
 [node name="Vers" type="LinkButton" parent="." unique_id=1686708760]
-offset_left = 611.985
+offset_left = 600.91
 offset_top = 651.815
-offset_right = 846.9889
+offset_right = 835.9139
 offset_bottom = 691.815
 uri = "https://github.com/Tryn996/TrynDPI/releases/latest"
 

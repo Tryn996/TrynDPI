@@ -6,7 +6,6 @@ extends Control
 
 var base_dir = OS.get_executable_path().get_base_dir()
 var save_path = "user://save.save"
-var new_save = "user://save_backup.save"
 
 func _ready():
 	setup_toggle($VBoxContainer/Auto_on, $VBoxContainer/Auto_off, "setting_start", 1, 0)
@@ -20,10 +19,8 @@ func _ready():
 	$VBoxContainer/Corn.pressed.connect(func(): OS.shell_open(base_dir))
 	$VBoxContainer/Bat.pressed.connect(func():OS.shell_open(OS.get_data_dir() + "/TrynDPI"))
 	$VBoxContainer/cup.pressed.connect(func():
-		OS.shell_open(base_dir + "/data/updates/updeate.exe")
-		await get_tree().create_timer(5).timeout
-		OS.shell_open(base_dir + "/data/updates/main.exe")
-		get_tree().quit())
+		get_tree().change_scene_to_file("res://scenes/loading.tscn")
+		Global.test = 1)
 	$VBoxContainer/debuger.pressed.connect(func():
 		OS.shell_open(base_dir + "/TrynDPI.console.exe")
 		get_tree().quit())

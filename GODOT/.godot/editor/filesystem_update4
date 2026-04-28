@@ -1,4 +1,6 @@
-res://scenes/main.tscn
+res://res/font/Text.en.translation
+res://res/font/Text.ru.translation
 res://script/scens/main.gd
-res://script/global/global.gd
-res://script/scens/scen_2.gd
+res://scenes/main.tscn
+res://scenes/loading.tscn
+res://script/load/loading.gd

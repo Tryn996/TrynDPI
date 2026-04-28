@@ -26,7 +26,13 @@ func all_print():
 	print(OS.get_executable_path().get_base_dir() + "/vers.txt")
 	print(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
 	print(OS.get_data_dir() + "/TrynDPI")
-func _ready():
+	print(OS.get_locale_language())
+func _ready(): 
+	if OS.get_locale_language() == "ru":
+		TranslationServer.set_locale("ru")
+	else:
+		TranslationServer.set_locale("en")
+		$Scen1/Status.position = Vector2(325,114.855)
 	var exe_path = (OS.get_executable_path().get_base_dir() + "/unins000.exe")
 	if FileAccess.file_exists(exe_path):
 		pass
@@ -44,15 +50,13 @@ func _ready():
 	$Scen1/VBoxContainer/Restart.pressed.connect(restart_dpi)
 	$Settings.pressed.connect(switch_scene.bind("settings"))
 	$Status.pressed.connect(switch_scene.bind("main"))
-	$Scen1/VBoxContainer/Proxy.pressed.connect(func():OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe"))
 	if is_winws_running() == true:
 		$Scen1/VBoxContainer/Start.hide()
 		$Scen1/VBoxContainer/Quit.show()
 	if not global_con == Global.const_vers and Global.upavt == 0:
+		OS.move_to_trash(OS.get_executable_path().get_base_dir() + "/data/updates/vers")
 		Global.test = 1
 		get_tree().change_scene_to_file("res://scenes/loading.tscn")
-	else:
-		OS.move_to_trash(OS.get_executable_path().get_base_dir() + "/data/updates/vers")
 func switch_scene(key):
 	for s in scenes.values(): s.hide()
 	scenes[key].show()
@@ -64,6 +68,7 @@ func update_ui(is_running: bool):
 	main_buttons.start.visible = !is_running
 
 func run_dpi():
+	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
 	OS.shell_open(Global.path)
 	update_ui(true)
 	start_state = 1

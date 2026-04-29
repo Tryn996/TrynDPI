@@ -1,17 +1,17 @@
 <p align="center">
-      <img src="https://github.com/Tryn996/TrynDPI/blob/main/GIT/back4.png" width="726">
+      <img src="https://github.com/Tryn996/TryProxy/blob/main/GIT/back4.png" width="726">
 </p>
 <p align="center">
   <a href="https://github.com/Tryn996/TrynDPI/releases/latest">
     <kbd>
-      <img height="40" src="https://github.com/Tryn996/TrynDPI/blob/main/GIT/doc256.png" style="social: invert(100%);">
+      <img height="40" src="https://github.com/Tryn996/TryProxy/blob/main/GIT/doc256.png" style="social: invert(100%);">
       &nbsp; RELEASES &nbsp;
     </kbd>
   </a>
       
   <a href="https://github.com/Tryn996/TryProxy/blob/main/windows.py">
     <kbd>
-      <img height="40" src="https://github.com/Tryn996/TrynDPI/blob/main/GIT/ext256.png" style="social: invert(100%);">
+      <img height="40" src="https://github.com/Tryn996/TryProxy/blob/main/GIT/ext256.png" style="social: invert(100%);">
       &nbsp; PROXY SOURCE CODE &nbsp;
     </kbd>
   </a>

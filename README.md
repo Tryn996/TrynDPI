@@ -11,7 +11,7 @@
       
   <a href="https://github.com/Tryn996/TryProxy/blob/main/windows.py">
     <kbd>
-      <img height="40" src="https://github.com/Tryn996/TryProxy/raw/main/GIT/doc256.png" style="social: invert(100%);">
+      <img height="40" src="https://github.com/Tryn996/TryProxy/raw/main/GIT/doc.png" style="social: invert(100%);">
       &nbsp; PROXY SOURCE CODE &nbsp;
     </kbd>
   </a>

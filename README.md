@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-   <img src="https://github.com/Tryn996/TrynDPI/releases/latest" alt="Latest Release">
-   <img src="https://github.com/Tryn996/TryProxy/blob/main/windows.py" alt="Proxy Code">
+ src="https://github.com/Tryn996/TrynDPI/releases/latest" alt="Latest Release">
+ src="https://github.com/Tryn996/TryProxy/blob/main/windows.py" alt="Proxy Code">
 </p>
 
 # TrynDPI

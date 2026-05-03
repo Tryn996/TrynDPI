@@ -10,9 +10,8 @@ A graphical interface for managing DPI bypass tools on Windows, built with the G
 The application is divided into several functional modules:
 
 *   **Main GUI (Godot)**: Handles the primary UI, process execution, and status monitoring.
-*   **Bypass Engine (Python)**: Manages complex DPI desync configurations and administrative privileges.
+*   **Bypass Engine (Python)**: Manages complex DPI desync configurations.
 *   **Update System (Python)**: Automates version checking and asset downloading from GitHub Releases.
-*   **Initialization & State**: Manages persistent user settings and window behavior.
 
 ## Technical Reference
 

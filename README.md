@@ -1,20 +1,5 @@
 <p align="center">
-      <img src="https://github.com/Tryn996/TrynDPI/blob/main/GIT/back4.png" width="726">
-</p>
-<p align="center">
-  <a href="https://github.com/Tryn996/TrynDPI/releases/latest">
-    <kbd>
-      <img height="40" src="https://github.com/Tryn996/TrynDPI/blob/main/GIT/doc256.png" style="social: invert(100%);">
-      &nbsp; RELEASES &nbsp;
-    </kbd>
-  </a>
-      
-  <a href="https://github.com/Tryn996/TryProxy/blob/main/windows.py">
-    <kbd>
-      <img height="40" src="https://github.com/Tryn996/TrynDPI/blob/main/GIT/ext256.png" style="social: invert(100%);">
-      &nbsp; PROXY SOURCE CODE &nbsp;
-    </kbd>
-  </a>
+      <img src="https://github.com/Tryn996/TryProxy/raw/main/GIT/back4.png" width="726">
 
 # TrynDPI
 
@@ -27,9 +12,8 @@ A graphical interface for managing DPI bypass tools on Windows, built with the G
 The application is divided into several functional modules:
 
 *   **Main GUI (Godot)**: Handles the primary UI, process execution, and status monitoring.
-*   **Bypass Engine (Python)**: Manages complex DPI desync configurations and administrative privileges.
+*   **Bypass Engine (Python)**: Manages complex DPI desync configurations.
 *   **Update System (Python)**: Automates version checking and asset downloading from GitHub Releases.
-*   **Initialization & State**: Manages persistent user settings and window behavior.
 
 ## Technical Reference
 

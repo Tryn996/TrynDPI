@@ -4,6 +4,7 @@ var ind = 2
 var un = (OS.get_executable_path().get_base_dir() + "/unins000.exe")
 var path_kill = (OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat")
 var reg = (OS.get_executable_path().get_base_dir() + "/data/bat/reg_del.bat")
+
 func _on_option_button_item_selected(index: int) -> void :
 	if index == 0:
 		ind = 0

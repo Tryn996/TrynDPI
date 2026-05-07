@@ -39,12 +39,10 @@ func setup_toggle(btn_on, btn_off, global_var, val_on, val_off, bat_on = "", bat
 		if bat_off: OS.shell_open(base_dir + bat_off)
 		save(); update_ui.call())
 	update_ui.call()
-	
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	for val in [Global.setting_start, Global.avtoload,Global.transp,Global.upavt]:
 		file.store_var(val)
-		
 func  _process(delta: float) -> void:
 	if Global.transp == 1:
 		get_window().transparent_bg = true

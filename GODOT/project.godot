@@ -59,7 +59,7 @@ theme/custom="res://res/themes/main.tres"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://res/font/Text.en.translation", "res://res/font/Text.ru.translation")
+locale/translations=PackedStringArray("res://res/font/Text.en.translation", "res://res/font/Text.ru.translation", "res://res/font/Text.zh.translation")
 
 [physics]
 
@@ -72,7 +72,7 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.12591091, 0.12591082, 0.12591082, 1)
+environment/defaults/default_clear_color=Color(0.10747976, 0.10747973, 0.10747973, 1)
 viewport/transparent_background=true
 
 [steam]

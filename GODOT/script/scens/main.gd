@@ -5,7 +5,7 @@ extends CanvasLayer
 
 var path_kill = OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat"
 var start_state = 0
-var global_con = "18"
+var global_con = "67"
 
 func read_file(path):
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -16,6 +16,7 @@ func read_file(path):
 		return ""
 func all_print():
 	print(is_winws_running())
+	print(OS.get_locale_language())
 	print(global_con)
 	print(get_window().size)
 	print(scenes)
@@ -26,8 +27,7 @@ func all_print():
 	print(OS.get_executable_path().get_base_dir() + "/vers.txt")
 	print(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
 	print(OS.get_data_dir() + "/TrynDPI")
-	print(OS.get_locale_language())
-func _ready(): 
+func _ready():
 	if OS.get_locale_language() == "ru":
 		TranslationServer.set_locale("ru")
 	else:
@@ -60,24 +60,20 @@ func _ready():
 func switch_scene(key):
 	for s in scenes.values(): s.hide()
 	scenes[key].show()
-
 func update_ui(is_running: bool):
 	status_labels.on.visible = is_running
 	status_labels.off.visible = !is_running
 	main_buttons.off.visible = is_running
 	main_buttons.start.visible = !is_running
-
 func run_dpi():
 	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
 	OS.shell_open(Global.path)
 	update_ui(true)
 	start_state = 1
-	
 func stop_dpi():
 	OS.shell_open(path_kill)
 	update_ui(false)
 	start_state = 0
-
 func restart_dpi():
 	OS.shell_open(path_kill)
 	update_ui(false)
@@ -85,16 +81,13 @@ func restart_dpi():
 	OS.shell_open(Global.path)
 	update_ui(true)
 	start_state = 1
-
 func _process(_delta):
 	if Global.start == 1:
 		Global.start = 0
 		run_dpi()
-
 func is_winws_running() -> bool:
 	var output = []
 	OS.execute("tasklist", ["/NH", "/FI", "IMAGENAME eq winws.exe"], output, true)
-	
 	if output.size() > 0:
 		return output[0].contains("winws.exe")
 	return false

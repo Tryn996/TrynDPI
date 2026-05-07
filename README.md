@@ -18,6 +18,8 @@
 
 # TrynDPI
 
+The project is distributed under the terms of the [MIT]("") license
+
 A graphical interface for managing DPI bypass tools on Windows, built with the Godot Engine and Python backend.
 
 ## Project Structure

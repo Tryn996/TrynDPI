@@ -30,7 +30,7 @@ def download_and_run():
         response.raise_for_status()
 
         with open(FULL_PATH, "wb") as f:
-            for chunk in response.iter_content(chunk_size=8192):
+            for chunk in response.item_content(chunk_size=8192):
                 f.write(chunk)
         subprocess.run(FULL_PATH)
         sys.exit()

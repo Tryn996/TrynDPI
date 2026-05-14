@@ -1,8 +1,2 @@
 res://scenes/main.tscn
-res://script/scens/main.gd
-res://res/themes/main.tres
-res://res/font/Text.en.translation
-res://res/font/Text.ru.translation
 res://script/global/global.gd
-res://script/scens/del.gd
-res://script/scens/scen_2.gd

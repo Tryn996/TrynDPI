@@ -1,2 +1,3 @@
 res://scenes/main.tscn
+res://script/scens/main.gd
 res://script/global/global.gd

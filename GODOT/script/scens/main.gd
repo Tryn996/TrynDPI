@@ -54,6 +54,7 @@ func _ready():
 		$Scen1/VBoxContainer/Start.hide()
 		$Scen1/VBoxContainer/Quit.show()
 	if not global_con == Global.const_vers and Global.upavt == 0:
+		OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat")
 		OS.move_to_trash(OS.get_executable_path().get_base_dir() + "/data/updates/vers")
 		Global.test = 1
 		get_tree().change_scene_to_file("res://scenes/loading.tscn")
@@ -79,6 +80,7 @@ func restart_dpi():
 	update_ui(false)
 	await get_tree().create_timer(1.5).timeout
 	OS.shell_open(Global.path)
+	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/TRYN_PROXY.exe")
 	update_ui(true)
 	start_state = 1
 func _process(_delta):

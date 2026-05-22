@@ -14,6 +14,7 @@ func _ready() -> void:
 		start()
 	
 func updeate():
+	OS.shell_open(OS.get_executable_path().get_base_dir() + "/data/bat/kill.bat")
 	get_window().borderless = true
 	get_window().size = Vector2i(450, 450)
 	anim.play("new_updeate")
